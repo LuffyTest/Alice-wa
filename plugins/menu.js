@@ -56,7 +56,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'audio': 'Voice Changer',
     'jadibot': 'Jadi Bot',
     'info': 'Info',
-    '': 'Uncategorized',
+    '': 'Tanpa Kategori',
   }
   if (teks == 'game') tags = {
     'game': 'Game'
