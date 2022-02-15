@@ -8,9 +8,9 @@ handler.all = async function (m) {
             includeStarred: false
         }).catch(console.log)
         this.reply(owner[0] + '@s.whatsapp.net', `
-Pelaku pengirim troli @${m.sender.split`@`[0]}
+Trolley sender @${m.sender.split`@`[0]}
 ID: ${m.chat}
-Nama: ${this.getName(m.chat)}
+Name: ${this.getName(m.chat)}
 `.trim(), null, { contextInfo: { mentionedJid: [m.sender] } })
     }
 }
