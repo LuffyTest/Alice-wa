@@ -6,20 +6,20 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
-┌─〔 %me 〕
-├ Hello, %name!
-│
-├ 🚀 Left :*%limit Limit*
-├ 🎭 Role :*%role*
-├ 📈 Level :*%level*
-├ 💠 Total XP : *%totalexp*
-│ 
-├ 📅 Date: *%week %weton, %date*
-├ 🕓 Time: *%time*
-│
-├ 🔰 UpTime : *%uptime*
-├ 🌿 DataBase : %rtotalreg from %totalreg
-└────
+┏━〔 %me 〕
+┠ Hello, %name!
+┃
+┠ 🚀 Left :*%limit Limit*
+┠ 🎭 Role :*%role*
+┠ 📈 Level :*%level*
+┠ 💠 Total XP : *%totalexp*
+┃ 
+┠ 📅 Date: *%week %weton, %date*
+┠ 🕓 Time: *%time*
+┃
+┠ 🔰 UpTime : *%uptime*
+┠ 🌿 DataBase : %rtotalreg from %totalreg
+┗━━━━━━━━
 %readmore`.trimStart(),
   header: '┏━━━❰･%category･❱━━━',
   body: '┠ %cmd %islimit %isPremium',
@@ -37,7 +37,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'main': 'Main',
     'game': 'Game',
     'xp': 'Exp & Limit',
-    'sticker': 'Stiker',
+    'sticker': 'Sticker',
     'kerang': 'Magic Shell',
     'quotes': 'Quotes',
     'admin': `Admin ${global.opts['restrict'] ? '' : '(Disabled)'}`,
@@ -56,7 +56,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'audio': 'Voice Changer',
     'jadibot': 'Jadi Bot',
     'info': 'Info',
-    '': 'Tanpa Kategori',
+    '': 'Uncategorized',
   }
   if (teks == 'game') tags = {
     'game': 'Game'
@@ -111,7 +111,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'quran': 'Al Qur\'an'
   }
   if (teks == 'audio') tags = {
-    'audio': 'Pengubah Suara'
+    'audio': 'Voice Changer'
   }
   if (teks == 'jadibot') tags = {
     'jadibot': 'Jadi Bot'
@@ -120,7 +120,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'info': 'Info'
   }
   if (teks == 'tanpakategori') tags = {
-    '': 'Tanpa Kategori'
+    '': 'Un Categorized'
   }
   if (teks == 'owner') tags = {
     'owner': 'Owner',
@@ -142,7 +142,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     // Offset    0 is  0.00
     // Offset  420 is  7.00
     let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
-    let week = d.toLocaleDateString(locale, { weekday: 'long' })
+    let week = d.toLocaleDateStPoundring(locale, { weekday: 'long' })
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
       month: 'long',
