@@ -111,7 +111,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'quran': 'Al Qur\'an'
   }
   if (teks == 'audio') tags = {
-    'audio': 'Voice Changer'
+    'audio': 'Pengubah Suara'
   }
   if (teks == 'jadibot') tags = {
     'jadibot': 'Jadi Bot'
@@ -120,7 +120,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'info': 'Info'
   }
   if (teks == 'tanpakategori') tags = {
-    '': 'Un Categorized'
+    '': 'Tanpa Kategori'
   }
   if (teks == 'owner') tags = {
     'owner': 'Owner',
