@@ -404,8 +404,8 @@ module.exports = {
               ppgc = await uploadImage(await (await fetch(await this.getProfilePicture(jid))).buffer())
             } catch (e) {
             } finally {
-              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Selamat datang, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
-                (chat.sBye || this.bye || conn.bye || 'Sampai jumpa, @user!')).replace(/@user/g, '@' + user.split`@`[0])
+              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
+                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace(/@user/g, '@' + user.split`@`[0])
               let wel = await new knights.Welcome()
                 .setUsername(this.getName(user))
                 .setGuildName(this.getName(jid))
@@ -434,9 +434,9 @@ module.exports = {
         }
         break
       case 'promote':
-        text = (chat.sPromote || this.spromote || conn.spromote || '@user sekarang Admin')
+        text = (chat.sPromote || this.spromote || conn.spromote || '@user now Admin')
       case 'demote':
-        if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user sekarang bukan Admin')
+        if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user now not Admin.')
         text = text.replace('@user', '@' + participants[0].split`@`[0])
         if (chat.detect) this.sendMessage(jid, text, MessageType.extendedText, {
           contextInfo: {
@@ -453,7 +453,7 @@ module.exports = {
 Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan
 
 ketik *.on delete* untuk mematikan pesan ini
-`.trim(), '© stikerin', 'Matikan Antidelete', ',on delete', m.message)
+`.trim(), '© Rias Gremory', 'Turn off Antidelete', ',on delete', m.message)
     this.copyNForward(m.key.remoteJid, m.message).catch(e => console.log(e, m))
   },
   async onCall(json) {
@@ -486,22 +486,22 @@ ketik *.on delete* untuk mematikan pesan ini
 
     ${desc} 
         `.trim()
-    this.sendButton(jid, caption, '© stikerin', 'Matikan', ',off desc')
+    this.sendButton(jid, caption, '© Rias Gremory', 'Turn off', ',off desc')
 
   }
 }
 
 global.dfail = (type, m, conn) => {
   let msg = {
-    rowner: 'Perintah ini hanya dapat digunakan oleh _*Pemilik Bot*_',
-    owner: 'Perintah ini hanya dapat digunakan oleh _*Pemilik Bot*_',
-    premium: 'Perintah ini hanya untuk pengguna _*Premium*_',
-    group: 'Perintah ini hanya dapat digunakan di grup',
-    private: 'Perintah ini hanya dapat digunakan di Chat Pribadi',
-    admin: 'Perintah ini hanya untuk *Admin* grup',
-    botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini',
-    unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Arif.19*',
-    nsfw: 'NSFW tidak aktif'
+    rowner: 'This command can only be used by _*Bot Owner*_.',
+    owner: 'This command can only be used by _*Bot Owner*_.',
+    premium: 'This command is only for _*Premium*_ users.',
+    group: 'This command can only be used in groups.',
+    private: 'This command can only be used in Private Chat.',
+    admin: 'This command is only for *Admin* group.',
+    botAdmin: 'Make bot as *Admin* to use this command.',
+    unreg: 'Please register to use this feature by typing:\n\n*#list of names.age*\n\nExample: *#list of Rias.19*',
+    nsfw: 'NSFW is not active.'
   }[type]
   if (msg) return m.reply(msg)
 }
