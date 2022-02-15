@@ -38,7 +38,7 @@ global.wait = 'Please wait'
 global.eror = 'Server Error'
 global.benar = '✅'
 global.salah = '❌'
-global.dikit = 'dikit lagi'
+global.dikit = 'a little morei'
 global.fla = 'https://i.imgur.com/cDAyM6r.jpeg'
 
 global.multiplier = 69 // Semakin tinggi, semakin sulit naik level
