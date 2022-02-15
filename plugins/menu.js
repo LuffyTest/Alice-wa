@@ -7,29 +7,25 @@ let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
 ┌─〔 %me 〕
-├ Hai, %name!
+├ Hello, %name!
 │
-├ Tersisa *%limit Limit*
-├ Role *%role*
-├ Level *%level (%exp / %maxexp)* [%xp4levelup]
-├ %totalexp XP secara Total
+├ 🚀 Left :*%limit Limit*
+├ 🎭 Role :*%role*
+├ 📈 Level :*%level*
+├ 💠 Total XP : *%totalexp*
 │ 
-├ Tanggal: *%week %weton, %date*
-├ Tanggal Islam: *%dateIslamic*
-├ Waktu: *%time*
+├ 📅 Date: *%week %weton, %date*
+├ 🕓 Time: *%time*
 │
-├ Uptime: *%uptime (%muptime)*
-├ Database: %rtotalreg dari %totalreg
-├ Github:
-├ %github
+├ 🔰 UpTime : *%uptime*
+├ 🌿 DataBase : %rtotalreg from %totalreg
 └────
 %readmore`.trimStart(),
-  header: '┌─〔 %category 〕',
-  body: '├ %cmd %islimit %isPremium',
-  footer: '└────\n',
+  header: '━━━❰･%category･❱━━━',
+  body: '┠ %cmd %islimit %isPremium',
+  footer: '┗━━━━\n',
   after: `
-*%npmname@^%version*
-${'```%npmdesc```'}
+*RiasGremory@^%version*
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
