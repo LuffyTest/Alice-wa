@@ -21,7 +21,7 @@ const defaultMenu = {
 ├ 🌿 DataBase : %rtotalreg from %totalreg
 └────
 %readmore`.trimStart(),
-  header: '━━━❰･%category･❱━━━',
+  header: '┏━━━❰･%category･❱━━━',
   body: '┠ %cmd %islimit %isPremium',
   footer: '┗━━━━\n',
   after: `
