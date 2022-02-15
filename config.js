@@ -5,6 +5,7 @@ global.owner = ['94711392491', '94711392491'] // Letakan nomor kamu disini
 
 global.APIs = { // API Prefix
   // nama: 'https://website'
+  joke: 'https://sv443.net/jokeapi/v2'
   amel: 'https://melcanz.com',
   bx: 'https://bx-hunter.herokuapp.com',
   rey: 'https://api.reysekha.my.id',
