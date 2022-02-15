@@ -200,73 +200,73 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
             {
               "rows": [
                 {
-                  "title": `Semua Perintah`,
+                  "title": `*━❰･MAIN･❱━*`,
                   "description": "",
                   "rowId": `${_p}? all`
                 }, {
-                  "title": "Game",
+                  "title": "*━❰･GAME･❱━*",
                   "description": "",
                   "rowId": `${_p}? game`
 
                 }, {
-                  "title": "XP",
+                  "title": "*━❰･EXP & LIMIT･❱━*",
                   "description": "",
                   "rowId": `${_p}? xp`
 
                 }, {
-                  "title": "Stiker",
+                  "title": "*━❰･STICKER･❱━*",
                   "description": "",
                   "rowId": `${_p}? stiker`
                 }, {
                   "title": "Kerang Ajaib",
-                  "description": "",
+                  "description": "Under Construction 🛠",
                   "rowId": `${_p}? kerangajaib`
                 }, {
                   "title": "Quotes",
-                  "description": "",
+                  "description": "Under Construction 🛠",
                   "rowId": `${_p}? quotes`
                 }, {
-                  "title": "Admin",
+                  "title": "*━❰･ADMIN･❱━*",
                   "description": "",
                   "rowId": `${_p}? admin`
                 }, {
-                  "title": "Grup",
+                  "title": "*━❰･GROUP･❱━*",
                   "description": "",
                   "rowId": `${_p}? grup`
                 }, {
-                  "title": "Premium",
+                  "title": "*━❰･PREMIUM･❱━*",
                   "description": "",
                   "rowId": `${_p}? premium`
                 }, {
-                  "title": "Internet",
+                  "title": "*━❰･INTERNET･❱━*",
                   "description": "",
                   "rowId": `${_p}? internet`
                 }, {
-                  "title": "Anonymous",
+                  "title": "*━❰･ANONYMOUS CHAT･❱━*",
                   "description": "",
                   "rowId": `${_p}? anonymous`
                 }, {
-                  "title": "Nulis & Logo",
+                  "title": "*━❰･LOGO & WRITING･❱━*",
                   "description": "",
                   "rowId": `${_p}? nulis`
                 }, {
-                  "title": "Downloader",
+                  "title": "*━❰･DOWNLOADER･❱━*",
                   "description": "",
                   "rowId": `${_p}? downloader`
                 }, {
-                  "title": "Tools",
+                  "title": "*━❰･TOOLS･❱━*",
                   "description": "",
                   "rowId": `${_p}? tools`
                 }, {
-                  "title": "Fun",
+                  "title": "*━❰･FUN･❱━*",
                   "description": "",
                   "rowId": `${_p}? fun`
                 }, {
-                  "title": "Database",
+                  "title": "*━❰･DATABASE･❱━*",
                   "description": "",
                   "rowId": `${_p}? database`
                 }, {
-                  "title": "Vote & Absen",
+                  "title": "━❰･VOTING & ABSENT･❱━",
                   "description": "",
                   "rowId": `${_p}? vote`
                 }, {
@@ -274,23 +274,23 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? quran`
                 }, {
-                  "title": "Pengubah Suara",
+                  "title": "*━❰･AUDIO･❱━*",
                   "description": "",
                   "rowId": `${_p}? audio`
                 }, {
-                  "title": "Jadi Bot",
+                  "title": "*━❰･GET BOT･❱━*",
                   "description": "",
                   "rowId": `${_p}? jadibot`
                 }, {
-                  "title": "Info",
+                  "title": "*━❰･INFO･❱━*",
                   "description": "",
                   "rowId": `${_p}? info`
                 }, {
-                  "title": "Tanpa Kategori",
+                  "title": "*━❰･NO CATEGORIZED･❱━*",
                   "description": "",
                   "rowId": `${_p}? tanpakategori`
                 }, {
-                  "title": "Owner",
+                  "title": "*━❰･OWNER･❱━*",
                   "description": "",
                   "rowId": `${_p}? owner`
                 }
@@ -381,7 +381,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'made with ❤️ by ariffb', 'Pemilik Bot', `${_p}owner`, 'Donasi', `${_p}donasi`, m)
+    await conn.sendButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'Rias Gremory 🎗', '☰ ALL MENU', `.menu`, m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
@@ -414,7 +414,7 @@ function clockString(ms) {
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
 function ucapan() {
-  const time = moment.tz('Asia/Jakarta').format('HH')
+  const time = moment.tz('Asia/Colombo').format('HH')
   res = "Good Morning 🌄"
   if (time >= 4) {
     res = "Good Morning 🌞"
