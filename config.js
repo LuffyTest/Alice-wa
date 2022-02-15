@@ -23,23 +23,23 @@ global.APIKeys = { // APIKey nya disini
   'https://api.reysekha.my.id': 'apirey',
   'https://bx-hunter.herokuapp.com': 'Ikyy69',
   'https://hardianto.xyz': 'hardianto',
-  'https://api.neoxr.eu.org': 'yntkts',
+  'https://api.neoxr.eu.org': 'UYFhJwJ9du',
   'https://api.chipa.xyz': 'pais',
-  'https://api.xteam.xyz': 'apikeymu',
-  'https://api.zeks.me': 'apivinz',
+  'https://api.xteam.xyz': 'ea25ce2bb9efb7c5',
+  'https://api.zeks.me': 'rNOP3N9WFFY7tqbMeNp1lmWkdwLqqqq',
 }
 
 // Sticker WM
-global.packname = 'arif️fb'
-global.author = 'amel'
+global.packname = 'Rias 🎋'
+global.author = 'Gremory'
 
-global.wm = '© ariffb & melcanz'
-global.wait = '_*tunggu sedang diproses...*_'
-global.eror = '_*Server Error*_'
+global.wm = '© Rias Gremory'
+global.wait = 'Please wait'
+global.eror = 'Server Error'
 global.benar = '✅'
 global.salah = '❌'
 global.dikit = 'dikit lagi'
-global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text='
+global.fla = 'https://telegra.ph/file/badb18b76cbe1987ba881.jpg'
 
 global.multiplier = 69 // Semakin tinggi, semakin sulit naik level
 
