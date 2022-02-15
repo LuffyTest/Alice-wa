@@ -189,14 +189,14 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
           "title": `${ucapan()}, ${name}`.trim(),
-          "description": "© stikerin",
-          "buttonText": "Klik Disini",
+          "description": "© Rias Gremory",
+          "buttonText": "CLICK HERE",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
               "rows": [
                 {
-                  "title": `Semua Perintah`,
+                  "title": `All Menu`,
                   "description": "",
                   "rowId": `${_p}? all`
                 }, {
@@ -210,11 +210,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "rowId": `${_p}? xp`
 
                 }, {
-                  "title": "Stiker",
+                  "title": "Sticker",
                   "description": "",
                   "rowId": `${_p}? stiker`
                 }, {
-                  "title": "Kerang Ajaib",
+                  "title": "Magic Shell",
                   "description": "",
                   "rowId": `${_p}? kerangajaib`
                 }, {
@@ -226,7 +226,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? admin`
                 }, {
-                  "title": "Grup",
+                  "title": "Group",
                   "description": "",
                   "rowId": `${_p}? grup`
                 }, {
@@ -270,7 +270,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? quran`
                 }, {
-                  "title": "Pengubah Suara",
+                  "title": "Voice Changer",
                   "description": "",
                   "rowId": `${_p}? audio`
                 }, {
@@ -282,7 +282,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? info`
                 }, {
-                  "title": "Tanpa Kategori",
+                  "title": "No Category",
                   "description": "",
                   "rowId": `${_p}? tanpakategori`
                 }, {
@@ -377,9 +377,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'made with ❤️ by ariffb', 'Pemilik Bot', `${_p}owner`, 'Donasi', `${_p}donasi`, m)
+    await conn.sendButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'made with ❤️ by Zero', 'Pemilik Bot', `${_p}all`, m)
   } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    conn.reply(m.chat, 'Sorry, the menu is in error', m)
     throw e
   }
 }
@@ -410,19 +410,19 @@ function clockString(ms) {
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
 function ucapan() {
-  const time = moment.tz('Asia/Jakarta').format('HH')
-  res = "Selamat dinihari"
+  const time = moment.tz('Asia/Colombo').format('HH')
+  res = "Good morning"
   if (time >= 4) {
-    res = "Selamat pagi"
+    res = "Good morning"
   }
   if (time > 10) {
-    res = "Selamat siang"
+    res = "Good Afternoon"
   }
   if (time >= 15) {
-    res = "Selamat sore"
+    res = "Good Afternoon"
   }
   if (time >= 18) {
-    res = "Selamat malam"
+    res = "Good night"
   }
   return res
 }
