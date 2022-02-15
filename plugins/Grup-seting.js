@@ -18,12 +18,12 @@ ${usedPrefix + command} <buka/tutup>
 Contoh:
 ${usedPrefix + command} tutup
 ${usedPrefix + command} buka
-	`.trim(), '© stikerin', 'Buka', ',grup 1', 'Tutup', ',grup 0', m)
+	`.trim(), '© Rias Gremory', 'OPEN', ',grup 1', 'CLOSE', ',grup 0', m)
 		throw 0
 	}
 	await conn.groupSettingChange(m.chat, GroupSettingChange.messageSend, isClose)
 }
-handler.help = ['grup <buka/tutup>']
+handler.help = ['group <open/close>']
 handler.tags = ['group']
 handler.command = /^(gro?up)$/i
 
