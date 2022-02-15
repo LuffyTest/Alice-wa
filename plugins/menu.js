@@ -34,18 +34,18 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
-    'main': 'Main',
+    'main': 'Utama',
     'game': 'Game',
     'xp': 'Exp & Limit',
-    'sticker': 'Sticker',
-    'kerang': 'Magic Shell',
+    'sticker': 'Stiker',
+    'kerang': 'Kerang Ajaib',
     'quotes': 'Quotes',
-    'admin': `Admin ${global.opts['restrict'] ? '' : '(Disabled)'}`,
-    'group': 'Group',
+    'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
+    'group': 'Grup',
     'premium': 'Premium',
     'internet': 'Internet',
     'anonymous': 'Anonymous Chat',
-    'nulis': 'Nulis & Logo',
+    'nulis': 'MagerNulis & Logo',
     'downloader': 'Downloader',
     'tools': 'Tools',
     'fun': 'Fun',
@@ -53,7 +53,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'vote': 'Voting',
     'absen': 'Absen',
     'quran': 'Al Qur\'an',
-    'audio': 'Voice Changer',
+    'audio': 'Pengubah Suara',
     'jadibot': 'Jadi Bot',
     'info': 'Info',
     '': 'Tanpa Kategori',
@@ -142,7 +142,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     // Offset    0 is  0.00
     // Offset  420 is  7.00
     let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
-    let week = d.toLocaleDateStPoundring(locale, { weekday: 'long' })
+    let week = d.toLocaleDateString(locale, { weekday: 'long' })
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
       month: 'long',
@@ -192,16 +192,15 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 ┊☞ ✅ *DATE* : ${date},
 ┊☞ 🖌️ *PREFIX* : ᴍᴜʟᴛɪ ᴘʀᴇғɪx 
 └─────────────────⸙ \n\ ______`
-          
           .trim(),
-          "description": "© Rias Gremory",
+          "description": "© Rias Gremory 🎗",
           "buttonText": "CLICK HERE",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
               "rows": [
                 {
-                  "title": `All Menu`,
+                  "title": `Semua Perintah`,
                   "description": "",
                   "rowId": `${_p}? all`
                 }, {
@@ -215,11 +214,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "rowId": `${_p}? xp`
 
                 }, {
-                  "title": "Sticker",
+                  "title": "Stiker",
                   "description": "",
                   "rowId": `${_p}? stiker`
                 }, {
-                  "title": "Magic Shell",
+                  "title": "Kerang Ajaib",
                   "description": "",
                   "rowId": `${_p}? kerangajaib`
                 }, {
@@ -231,7 +230,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? admin`
                 }, {
-                  "title": "Group",
+                  "title": "Grup",
                   "description": "",
                   "rowId": `${_p}? grup`
                 }, {
@@ -275,7 +274,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? quran`
                 }, {
-                  "title": "Voice Changer",
+                  "title": "Pengubah Suara",
                   "description": "",
                   "rowId": `${_p}? audio`
                 }, {
@@ -287,7 +286,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? info`
                 }, {
-                  "title": "No Category",
+                  "title": "Tanpa Kategori",
                   "description": "",
                   "rowId": `${_p}? tanpakategori`
                 }, {
@@ -382,9 +381,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.sendButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'Rias Gremory', '☰ ALL MENU', `.menu`, m)
+    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'made with ❤️ by ariffb', 'Pemilik Bot', `${_p}owner`, 'Donasi', `${_p}donasi`, m)
   } catch (e) {
-    conn.reply(m.chat, 'Sorry, the menu is in error', m)
+    conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
   }
 }
@@ -415,19 +414,19 @@ function clockString(ms) {
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
 function ucapan() {
-  const time = moment.tz('Asia/Colombo').format('HH')
-  res = "Good morning"
+  const time = moment.tz('Asia/Jakarta').format('HH')
+  res = "Good Morning 🌄"
   if (time >= 4) {
-    res = "Good morning"
+    res = "Good Morning 🌞"
   }
   if (time > 10) {
-    res = "Good Afternoon"
+    res = "Good afternoon 🌅"
   }
   if (time >= 15) {
-    res = "Good Afternoon"
+    res = "Good Evening 🌆"
   }
   if (time >= 18) {
-    res = "Good night"
+    res = "Good Night 🌌"
   }
   return res
 }
