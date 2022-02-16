@@ -34,29 +34,29 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'anime', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
-    'main': '*ALL MENU*',
+    'main': 'ALL MENU',
     'anime': 'ANIME',
     'downloader': 'DOWNLOADER',
-    'sticker': 'Stiker',
+    'sticker': 'STICKER',
     'kerang': 'Kerang Ajaib',
     'quotes': 'Quotes',
-    'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
-    'group': 'Grup',
-    'premium': 'Premium',
-    'internet': 'Internet',
-    'anonymous': 'Anonymous Chat',
-    'nulis': 'MagerNulis & Logo',
+    'admin': `ADMIN`,
+    'group': 'GROUP',
+    'premium': 'PREMIUM',
+    'internet': 'INTERNET',
+    'anonymous': 'ANONYMOUS CHAT',
+    'nulis': 'WRITING & LOGO',
     'xp': 'XP & LIMIT',
-    'tools': 'Tools',
-    'fun': 'Fun',
-    'database': 'Database',
-    'vote': 'Voting',
-    'absen': 'Absen',
+    'tools': 'TOOLS',
+    'fun': 'FUN',
+    'database': 'DATABASE',
+    'vote': 'VOTING',
+    'absen': 'ROLL CALL',
     'game': 'GAME',
-    'audio': 'Pengubah Suara',
-    'jadibot': 'Jadi Bot',
-    'info': 'Info',
-    '': 'Tanpa Kategori',
+    'audio': 'VOICE EDITING',
+    'jadibot': 'GET BOT',
+    'info': 'INFO',
+    '': 'NONE CATEGORY',
   }
   if (teks == 'anime') tags = {
     'anime': 'ANIME'
@@ -193,28 +193,28 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 ┊☞ 🖌️ *PREFIX* : ᴍᴜʟᴛɪ ᴘʀᴇғɪx 
 └─────────────────⸙ \n\ ______`
           .trim(),
-          "description": "© Rias Gremory 🎗",
+          "description": "© Alice 🎗",
           "buttonText": "CLICK HERE",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
               "rows": [
                 {
-                  "title": `*━❰･MAIN･❱━*`,
+                  "title": `━❰･ALL･❱━`,
                   "description": "",
                   "rowId": `${_p}? all`
                 }, {
-                  "title": "*━❰･GAME･❱━*",
+                  "title": "━❰･ANIME･❱━",
                   "description": "",
-                  "rowId": `${_p}? game`
+                  "rowId": `${_p}? anime`
 
                 }, {
-                  "title": "*━❰･EXP & LIMIT･❱━*",
+                  "title": "━❰･DOWNLOADER･❱━",
                   "description": "",
-                  "rowId": `${_p}? xp`
+                  "rowId": `${_p}? downloader`
 
                 }, {
-                  "title": "*━❰･STICKER･❱━*",
+                  "title": "━❰･STICKER･❱━",
                   "description": "",
                   "rowId": `${_p}? stiker`
                 }, {
@@ -250,19 +250,19 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? nulis`
                 }, {
-                  "title": "*━❰･DOWNLOADER･❱━*",
+                  "title": "━❰･EXP & LIMIT･❱━",
                   "description": "",
-                  "rowId": `${_p}? downloader`
+                  "rowId": `${_p}? xp`
                 }, {
-                  "title": "*━❰･TOOLS･❱━*",
+                  "title": "━❰･TOOLS･❱━",
                   "description": "",
                   "rowId": `${_p}? tools`
                 }, {
-                  "title": "*━❰･FUN･❱━*",
+                  "title": "━❰･FUN･❱━",
                   "description": "",
                   "rowId": `${_p}? fun`
                 }, {
-                  "title": "*━❰･DATABASE･❱━*",
+                  "title": "━❰･DATABASE･❱━",
                   "description": "",
                   "rowId": `${_p}? database`
                 }, {
@@ -270,27 +270,27 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? vote`
                 }, {
-                  "title": "━❰･ANIME･❱━",
+                  "title": "━❰･GAME･❱━",
                   "description": "",
-                  "rowId": `${_p}? anime`
+                  "rowId": `${_p}? game`
                 }, {
-                  "title": "*━❰･AUDIO･❱━*",
+                  "title": "━❰･AUDIO･❱━",
                   "description": "",
                   "rowId": `${_p}? audio`
                 }, {
-                  "title": "*━❰･GET BOT･❱━*",
+                  "title": "━❰･GET BOT･❱━",
                   "description": "",
                   "rowId": `${_p}? jadibot`
                 }, {
-                  "title": "*━❰･INFO･❱━*",
+                  "title": "━❰･INFO･❱━",
                   "description": "",
                   "rowId": `${_p}? info`
                 }, {
-                  "title": "*━❰･NO CATEGORIZED･❱━*",
+                  "title": "━❰･NO CATEGORIZED･❱━",
                   "description": "",
                   "rowId": `${_p}? tanpakategori`
                 }, {
-                  "title": "*━❰･OWNER･❱━*",
+                  "title": "━❰･OWNER･❱━",
                   "description": "",
                   "rowId": `${_p}? owner`
                 }
