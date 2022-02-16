@@ -4,7 +4,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
     let [_, code] = text.match(linkRegex) || []
     if (!code) throw 'Wrong Link'
     let res = await conn.acceptInvite(code)
-    m.reply(`Berhasil join grup ${res.gid}`).then(() => {
+    m.reply(`Successfully joined the group ${res.gid}`).then(() => {
         var jumlahHari = 86400000 * 0.5
         var now = new Date() * 1
         if (now < global.db.data.chats[res.gid].expired) global.db.data.chats[res.gid].expired += jumlahHari
@@ -13,10 +13,10 @@ let handler = async (m, { conn, text, usedPrefix }) => {
     await conn.sendButton(res.gid, `
 *${conn.user.name}* is a whatsapp bot built with Nodejs, *${conn.user.name}* was invited by @${m.sender.split`@`[0]}
     
-ketik *${usedPrefix}menu* untuk melihat daftar perintah`.trim(), '© Alice -🥀', 'MENU', `${usedPrefix}?`, m)
+type *${usedPrefix}menu* to see a list of commands`.trim(), '© Alice -🥀', 'MENU', `${usedPrefix}?`, m)
 }
 handler.help = ['join <chat.whatsapp.com>']
-handler.tags = ['tools']
+handler.tags = ['premium']
 handler.command = /^join$/i
 
 handler.premium = true
