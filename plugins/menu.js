@@ -36,7 +36,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'all') tags = {
     'main': '*ALL MENU*',
     'anime': 'ANIME',
-    'xp': 'Exp & Limit',
+    'downloader': 'DOWNLOADER',
     'sticker': 'Stiker',
     'kerang': 'Kerang Ajaib',
     'quotes': 'Quotes',
@@ -46,7 +46,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'internet': 'Internet',
     'anonymous': 'Anonymous Chat',
     'nulis': 'MagerNulis & Logo',
-    'downloader': 'Downloader',
+    'xp': 'XP & LIMIT',
     'tools': 'Tools',
     'fun': 'Fun',
     'database': 'Database',
@@ -61,8 +61,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'anime') tags = {
     'anime': 'ANIME'
   }
-  if (teks == 'xp') tags = {
-    'xp': 'Exp & Limit'
+  if (teks == 'downloader') tags = {
+    'downloader': 'DOWNLOADER'
   }
   if (teks == 'stiker') tags = {
     'sticker': 'Stiker'
@@ -91,8 +91,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'nulis') tags = {
     'nulis': 'MagerNulis & Logo'
   }
-  if (teks == 'downloader') tags = {
-    'downloader': 'Downloader'
+  if (teks == 'xp') tags = {
+    'xp': 'XP & LIMIT'
   }
   if (teks == 'tools') tags = {
     'tools': 'Tools'
