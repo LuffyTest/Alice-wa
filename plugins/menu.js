@@ -108,7 +108,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'absen': 'Absen'
   }
   if (teks == 'anime') tags = {
-    'quran': 'ANIME'
+    'anime': 'ANIME'
   }
   if (teks == 'audio') tags = {
     'audio': 'Pengubah Suara'
