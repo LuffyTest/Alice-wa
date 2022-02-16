@@ -30,16 +30,16 @@ global.APIKeys = { // APIKey nya disini
 }
 
 // Sticker WM
-global.packname = 'Rias 🎋'
-global.author = 'Gremory'
+global.packname = 'Alice 🎋'
+global.author = 'Nakiri'
 
-global.wm = '© Rias Gremory'
+global.wm = '© Alice Nakiri'
 global.wait = 'Please wait'
 global.eror = 'Server Error'
 global.benar = '✅'
 global.salah = '❌'
 global.dikit = 'A little morei'
-global.fla = 'https://i.imgur.com/cDAyM6r.jpeg'
+global.fla = 'https://telegra.ph/file/2f98ac4fdbee1bee1ca66.jpg'
 
 global.multiplier = 69 // Semakin tinggi, semakin sulit naik level
 
