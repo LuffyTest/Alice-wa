@@ -8,28 +8,28 @@ let handler = async (m, { conn }) => {
     let uptime = clockString(_uptime)
 
     m.reply(`
-┌─「 *Status* 」
-├ Aktif selama ${uptime}
-├ Baterai ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
-├ *${groups.length}* Grup
-├ *${chats.length - groups.length}* Chat Pribadi
-├ *${Object.keys(global.db.data.users).length}* Pengguna
-├ *${totaljadibot.length}* Jadibot
-├ *${conn.blocklist.length}* Terblock
-├ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* Chat Terbanned
-├ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
-└────
+┌─「 *STATUS* 」
+├ 📊 Active Since: ${uptime}
+├ 🧬 Battery: ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Charging' : ''}` : 'Unknown'}
+├ 🔖 Groups: *${groups.length}*
+├ 🔖 Private Chats: *${chats.length - groups.length}* 
+├ 🔖 Users: *${Object.keys(global.db.data.users).length}* 
+├ 🔖 Jadibots: *${totaljadibot.length}* 
+├ ⚠️ Blocked: *${conn.blocklist.length}* 
+├ ⚠️ Banned Chats: *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* 
+├ ⚠️ Banned Users: *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}*
+└────────────
 
-┌─「 *Pengaturan* 」
-├ ${anon ? '✅' : '❌'} *Anon Chat*
-├ ${anticall ? '✅' : '❌'} *Anti Call*
-├ ${antispam ? '✅' : '❌'} *Anti Spam*
-├ ${antitroli ? '✅' : '❌'} *Anti Troli*
-├ ${backup ? '✅' : '❌'} *Auto Backup DB*
-├ ${group ? '✅' : '❌'} *Mode Grup*
-├ ${jadibot ? '✅' : '❌'} *Jadi Bot*
-├ ${nsfw ? '✅' : '❌'} *Mode Nsfw*
-└────
+┌─「 *ARRANGEMENT* 」
+├🔅 *Anon Chat:* ${anon ? '✅' : '❌'} 
+├🔅 *Anti Call:* ${anticall ? '✅' : '❌'}
+├🔅 *Anti Spam:* ${antispam ? '✅' : '❌'}
+├🔅 *Anti Troli:* ${antitroli ? '✅' : '❌'}
+├🔅 *Auto Backup DB:* ${backup ? '✅' : '❌'}
+├🔅 *Group Mode:* ${group ? '✅' : '❌'}
+├🔅 *Jadi Bots:* ${jadibot ? '✅' : '❌'}
+├🔅 *Nsfw Mode:* ${nsfw ? '✅' : '❌'}
+└────────────
     `.trim())
 }
 handler.help = ['botstatus']
