@@ -13,7 +13,7 @@ handler.all = async function (m) {
         if (m.messageTimestamp.toNumber() - this.spam[m.sender].lastspam > 10) {
             if (this.spam[m.sender].count > 10) {
                 db.data.users[m.sender].banned = true
-                await this.sendButton(m.chat, `kamu dibanned karena spam!${m.isGroup ? `\n\ngroup admin can use command *.unban @${m.sender.split`@`[0]}*` : ''}`, '© Rias Gremory', '☰ ALL MENU', ',menu', m, { contextInfo: { mentionedJid: [m.sender] } })
+                await this.sendButton(m.chat, `you got banned for spam!${m.isGroup ? `\n\nGroup admin can use command*.unban @${m.sender.split`@`[0]}*` : ''}`, 'Alice 🤍🥀', '☰ ALL MENU', ',menu', m, { contextInfo: { mentionedJid: [m.sender] } })
             }
             this.spam[m.sender].count = 0
             this.spam[m.sender].lastspam = m.messageTimestamp.toNumber()
