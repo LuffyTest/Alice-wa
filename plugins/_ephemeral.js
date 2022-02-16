@@ -8,8 +8,8 @@ module.exports = {
       case WA_MESSAGE_STUB_TYPE.CHANGE_EPHEMERAL_SETTING:
         if (chat.detect)
           this.sendMessage(chatUpdate.jid, +m.messageStubParameters[0] ?
-            'Pesan Sementara ON' :
-            'Pesan Sementara OFF'
+            'Order Temporarily ON' :
+            'Order Temporarily OFF'
             , 'extendedTextMessage')
         break
     }
@@ -23,7 +23,7 @@ module.exports = {
                 content: m.msg,
                 sender: m.sender
               }
-              this.sendMessage(m.chat, ('*BUG GRUP TERDETEKSI, JANGAN SCROLL KEATAS! HAPUS CHAT INI BIAR GA EROR!!!*\n\n' + require('util').format(log)).padEnd(65536, '\n'), 'extendedTextMessage')
+              this.sendMessage(m.chat, ('*GROUP BUG DETECTED, DON T SCROLL UP! DELETE THIS CHAT SO THERE WILL BE NO ERROR!!!*\n\n' + require('util').format(log)).padEnd(65536, '\n'), 'extendedTextMessage')
               // this.modifyChat(m.chat, 'clear', {
               //     includeStarred: false
               // }).catch(console.error)
