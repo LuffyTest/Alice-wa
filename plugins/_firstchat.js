@@ -8,8 +8,8 @@ handler.all = async function (m) {
     await this.sendButton(m.chat, `
 Hai, ${this.ucapan()}
 
-${user.banned ? 'kamu dibanned' : `Ada yang bisa ${this.user.name} bantu?`}
-`.trim(), '© stikerin', user.banned ? 'Pemilik Bot' : 'Menu', user.banned ? ',owner' : ',?', m)
+${user.banned ? 'You are banned' : `Anyone can ${this.user.name} help?`}
+`.trim(), '© Alice 🤍🥀', user.banned ? 'MENU' ',?', m)
     user.pc = new Date * 1
 }
 
