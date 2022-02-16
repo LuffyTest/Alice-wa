@@ -107,8 +107,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'vote': 'Voting',
     'absen': 'Absen'
   }
-  if (teks == 'quran') tags = {
-    'quran': 'Al Qur\'an'
+  if (teks == 'anime') tags = {
+    'quran': 'ANIME'
   }
   if (teks == 'audio') tags = {
     'audio': 'Pengubah Suara'
@@ -270,9 +270,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? vote`
                 }, {
-                  "title": "Al-Qur\'an",
+                  "title": "━❰･ANIME･❱━",
                   "description": "",
-                  "rowId": `${_p}? quran`
+                  "rowId": `${_p}? anime`
                 }, {
                   "title": "*━❰･AUDIO･❱━*",
                   "description": "",
