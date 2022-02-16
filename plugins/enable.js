@@ -257,10 +257,10 @@ ${usedPrefix}off welcome
       throw false
   }
   m.reply(`
-*${type}* berhasil di *${isEnable ? 'nyala' : 'mati'}kan* ${isAll ? 'untuk bot ini' : isUser ? '' : 'untuk chat ini'}
+*${type}* successful in *${isEnable ? 'nyala' : 'mati'}kan* ${isAll ? 'For this bot' : isUser ? '' : 'For this bot'}
 `.trim())
 }
-handler.help = ['on', 'off'].map(v => v + ' <opsi>')
+handler.help = ['on', 'off'].map(v => v + ' <option>')
 handler.tags = ['group', 'owner']
 handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
 
