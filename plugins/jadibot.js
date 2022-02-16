@@ -9,7 +9,7 @@ else global.conns = []
 
 let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
   let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
-  if (!db.data.settings[conn.user.jid].jadibot) throw `Fitur ini tidak aktif\n${package.homepage ? package.homepage.url || package.homepage : '[unknown github url]'}`
+  if (!db.data.settings[conn.user.jid].jadibot) throw `This feature is not active..🌈🪐`
   let parent = args[0] && args[0] == 'plz' ? conn : global.conn
   let auth = false
   if ((args[0] && args[0] == 'plz') || global.conn.user.jid == conn.user.jid) {
@@ -23,7 +23,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
       auth = true
     }
     conn.on('qr', async qr => {
-      let scan = await parent.sendFile(m.chat, await qrcode.toDataURL(qr, { scale: 8 }), 'qrcode.png', 'Scan QR ini untuk jadi bot sementara\n\n1. Klik titik tiga di pojok kanan atas\n2. Ketuk Perangkat Tertaut\n3. Tautkan Perangkat\n4. Scan QR ini \nQR Kadaluarsa dalam 20 detik', m)
+      let scan = await parent.sendFile(m.chat, await qrcode.toDataURL(qr, { scale: 8 }), 'qrcode.png', 'Scan this QR to become a temporary bot\n\n🔰 1. Click the three dots in the top right corner\n🔰 2. Tap Linked Device\n🔰 3. Link Device\n🔰 4. Scan this QR \n💢QR Expires in 20 seconds..💢', m)
       setTimeout(() => {
         parent.deleteMessage(m.chat, scan.key)
       }, 30000)
@@ -46,7 +46,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
     conn.connect().then(async ({ user }) => {
       parent.reply(m.chat, 'Berhasil tersambung dengan WhatsApp - mu.\n*NOTE: Ini cuma numpang*\n' + JSON.stringify(user, null, 2), m)
       if (auth) return
-      await parent.sendMessage(user.jid, `Kamu bisa login tanpa qr dengan pesan dibawah ini. untuk mendapatkan kode lengkapnya, silahkan kirim *${usedPrefix}getcode* untuk mendapatkan kode yang akurat`, MessageType.extendedText)
+      await parent.sendMessage(user.jid, `You can login without qr with the message below. to get the complete code, please send *${usedPrefix}getcode* to get the accurate code`, MessageType.extendedText)
       parent.sendMessage(user.jid, `${usedPrefix + command} ${Buffer.from(JSON.stringify(conn.base64EncodedAuthInfo())).toString('base64')}`, MessageType.extendedText)
     })
     setTimeout(() => {
@@ -62,7 +62,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
         try {
           if (conn.state != 'close') return
           if (conn.user && conn.user.jid)
-            parent.sendMessage(conn.user.jid, `Koneksi terputus...`, MessageType.extendedText)
+            parent.sendMessage(conn.user.jid, `Connection lost...`, MessageType.extendedText)
           let i = global.conns.indexOf(conn)
           if (i < 0) return
           delete global.conns[i]
@@ -71,7 +71,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
       }, 30000)
     })
     global.conns.push(conn)
-  } else throw 'Tidak bisa membuat bot didalam bot!\n\nhttps://wa.me/' + global.conn.user.jid.split`@`[0] + '?text=.jadibot'
+  } else throw 'Cant make a bot inside a bot!\n\nhttps://wa.me/' + global.conn.user.jid.split`@`[0] + '?text=.jadibot'
 }
 handler.help = ['jadibot']
 handler.tags = ['jadibot']
