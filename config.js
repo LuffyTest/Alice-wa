@@ -39,7 +39,7 @@ global.eror = 'Server Error'
 global.benar = '✅'
 global.salah = '❌'
 global.dikit = 'A little morei'
-global.fla = 'https://telegra.ph/file/2f98ac4fdbee1bee1ca66.jpg'
+global.fla = 'https://i.imgur.com/3xjSoFM.jpg'
 
 global.multiplier = 69 // Semakin tinggi, semakin sulit naik level
 
