@@ -24,10 +24,10 @@ handler.before = async function (m) {
         }))
         if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
             m.reply({
-                '-3': 'Game telah berakhir',
+                '-3': 'Game is over',
                 '-2': 'Invalid',
-                '-1': 'Posisi Invalid',
-                0: 'Posisi Invalid',
+                '-1': 'Position Invalid',
+                0: 'Position Invalid',
             }[ok])
             return !0
         }
@@ -67,12 +67,12 @@ Room ID: ${room.id}
         let users = global.db.data.users
         if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
             room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-        if (room.x !== room.o) await conn.sendButton(room.x, str, '© stikerin', 'Nyerah', 'nyerah', m, {
+        if (room.x !== room.o) await conn.sendButton(room.x, str, '© Alice 🤍🥀', 'Give up', 'nyerah', m, {
             contextInfo: {
                 mentionedJid: this.parseMention(str)
             }
         })
-        await conn.sendButton(room.o, str, '© stikerin', 'Nyerah', 'nyerah', m, {
+        await conn.sendButton(room.o, str, '© Alice 🤍🥀', 'Give up', 'nyerah', m, {
             contextInfo: {
                 mentionedJid: this.parseMention(str)
             }
