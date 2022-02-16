@@ -2,7 +2,7 @@ const { servers, yta, ytv } = require('../lib/y2mate')
 let yts = require('yt-search')
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `uhm.. cari apa?\n\ncontoh:\n${usedPrefix + command} california`
+  if (!text) throw `😳 uhm.. what are you looking for?\n\nEx:\n${usedPrefix + command} california`
   let chat = global.db.data.chats[m.chat]
   let results = await yts(text)
   let vid = results.all.find(video => video.seconds < 3600)
@@ -19,20 +19,20 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       usedServer = server
       break
     } catch (e) {
-      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nTried another server...'}`)
+      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nTried another server...🏳'}`)
     }
   }
   if (yt === false) throw '_All servers fail.._'
   if (yt2 === false) throw '_All servers fail.._'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
   await conn.send2ButtonLoc(m.chat, await (await fetch(thumb)).buffer(), `
-*Judul:* ${title}
-*Ukuran File Audio:* ${filesizeF}
-*Ukuran File Video:* ${yt2.filesizeF}
-*Server y2mate:* ${usedServer}
+*🔮 Title:* ${title}
+*🔻 Audio File Size:* ${filesizeF}
+*🔻 Video File Size:* ${yt2.filesizeF}
+*🍃 Server:* ${usedServer}
 `.trim(), '© Alice 🤍🥀', 'Audio', `.yta ${vid.url}`, 'Video', `.yt ${vid.url}`)
 }
-handler.help = ['play'].map(v => v + ' <search>')
+handler.help = ['play'].map(v => v + ' <name>')
 handler.tags = ['downloader']
 handler.command = /^(p|play)$/i
 
