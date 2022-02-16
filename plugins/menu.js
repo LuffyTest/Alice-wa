@@ -35,7 +35,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': '*ALL MENU*',
-    'game': 'Game',
+    'anime': 'ANIME',
     'xp': 'Exp & Limit',
     'sticker': 'Stiker',
     'kerang': 'Kerang Ajaib',
@@ -52,14 +52,14 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'database': 'Database',
     'vote': 'Voting',
     'absen': 'Absen',
-    'anime': 'ANIME',
+    'game': 'GAME',
     'audio': 'Pengubah Suara',
     'jadibot': 'Jadi Bot',
     'info': 'Info',
     '': 'Tanpa Kategori',
   }
-  if (teks == 'game') tags = {
-    'game': 'Game'
+  if (teks == 'anime') tags = {
+    'anime': 'ANIME'
   }
   if (teks == 'xp') tags = {
     'xp': 'Exp & Limit'
@@ -107,8 +107,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'vote': 'Voting',
     'absen': 'Absen'
   }
-  if (teks == 'anime') tags = {
-    'anime': 'ANIME'
+  if (teks == 'game') tags = {
+    'game': 'GAME'
   }
   if (teks == 'audio') tags = {
     'audio': 'Pengubah Suara'
