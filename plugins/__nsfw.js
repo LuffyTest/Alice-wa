@@ -18,7 +18,7 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
   }
 }
 handler.help = ['nhentai', 'nhs'].map(v => v + ' <search>')
-handler.tags = ['NSFW']
+handler.tags = ['anime']
 handler.command = /^nhentai?$/i
 handler.owner = false
 handler.mods = false
