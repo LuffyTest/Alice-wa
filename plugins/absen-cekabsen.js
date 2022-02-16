@@ -1,7 +1,7 @@
 let handler = async (m, { conn, usedPrefix }) => {
     let id = m.chat
     conn.absen = conn.absen ? conn.absen : {}
-    if (!(id in conn.absen)) return await conn.sendButton(m.chat, `Tidak ada absen berlangsung!`.trim(), '© stikerin', 'Mulai', `${usedPrefix}mulaiabsen`, m)
+    if (!(id in conn.absen)) return await conn.sendButton(m.chat, `Tidak ada absen berlangsung!`.trim(), '© Alice 🤍🥀', 'Start', `${usedPrefix}mulaiabsen`, m)
     let d = new Date
     let date = d.toLocaleDateString('id', {
         day: 'numeric',
@@ -19,9 +19,9 @@ ${conn.absen[id][2]}
 ├ Total: ${absen.length}
 ${list} 
 └────`.trim()
-    await conn.send2Button(m.chat, caption, '© stikerin', 'Hadir', `${usedPrefix}absen`, 'Hapus', `${usedPrefix}-absen`, m)
+    await conn.send2Button(m.chat, caption, '© Alice 🤍🥀', 'Present', `${usedPrefix}absen`, 'Delete', `${usedPrefix}-absen`, m)
 }
-handler.help = ['cekabsen']
+handler.help = ['absentcheck']
 handler.tags = ['absen']
 handler.command = /^cekabsen$/i
 
