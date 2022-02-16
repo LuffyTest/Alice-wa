@@ -25,13 +25,13 @@ const defaultMenu = {
   body: '┠ %cmd %islimit %isPremium',
   footer: '┗━━━━\n',
   after: `
-*RiasGremory@^%version*
+*Alice 🤍🥀@^%version*
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'anime', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': '*ALL MENU*',
@@ -52,7 +52,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'database': 'Database',
     'vote': 'Voting',
     'absen': 'Absen',
-    'quran': 'Al Qur\'an',
+    'anime': 'ANIME',
     'audio': 'Pengubah Suara',
     'jadibot': 'Jadi Bot',
     'info': 'Info',
