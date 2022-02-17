@@ -9,7 +9,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
   try {
     let { dl_link, thumb, title, filesize, filesizeF } = await ytv(args[0], servers.includes(server) ? server : servers[0])
     let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
-    m.reply(isLimit ? `Ukuran File: ${filesizeF}\nUkuran file diatas ${limit} MB, download sendiri: ${dl_link}` : wait)
+    m.reply(isLimit ? : `File Size${filesizeF}\nFile size above ${limit} MB, download it yourself..🥱: ${dl_link}` : wait)
     let _thumb = {}
     try { _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
     catch (e) { }
