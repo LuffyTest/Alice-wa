@@ -14,7 +14,7 @@ const colors = [
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     let _m = Promise.resolve({ key: { id: '' } })
-    if (!m.quoted && !text) throw `Balas pesan atau sebagai argumen dengan perintah *${usedPrefix + command}*`
+    if (!m.quoted && !text) throw `Reply to message or as argument with command *${usedPrefix + command}*`
     if (m.quoted && m.quoted.mtype !== 'conversation' && !text) _m = m.quoted.forward('status@broadcast')
     if (m.quoted && m.quoted.mtype === 'conversation' && !text) _m = conn.sendMessage('status@broadcast', {
         text: m.quoted.text,
@@ -29,7 +29,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (m.quoted && text) _m = conn.forwardMessage('status@broadcast', await m.quoted.cMod('status@broadcast', text))
     m.reply((await _m).key.id)
 }
-handler.help = ['upsw [teks] (Balas Media)', 'upsw <teks>']
+handler.help = ['upsw [teext] (Reply Media)', 'upsw <text>']
 handler.tags = ['owner']
 handler.command = /^upsw$/i
 
