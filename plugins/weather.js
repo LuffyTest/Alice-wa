@@ -11,14 +11,14 @@ let handler = async (m, { text, usedPrefix, command }) => {
     let json = await res.json()
     if (json.cod != 200) throw json
     m.reply(`
-Location: ${json.name}
-Country: ${json.sys.country}
-Weather: ${json.weather[0].description}
-Current temperature: ${json.main.temp} °C
-Highest temperature: ${json.main.temp_max} °C
-Lowest temperature: ${json.main.tmemp_min} °C
-Humidity: ${json.main.humidity} %
-Wind: ${json.wind.speed} km/hour
+📍 Location: ${json.name}
+🌎 Country: ${json.sys.country}
+🌦️ Weather: ${json.weather[0].description}
+🌡️ Current temperature: ${json.main.temp} °C
+📈 Highest temperature: ${json.main.temp_max} °C
+📉 Lowest temperature: ${json.main.tmemp_min} °C
+💦 Humidity: ${json.main.humidity} %
+🌪 Wind: ${json.wind.speed} km/hour
     `.trim())
 }
 
