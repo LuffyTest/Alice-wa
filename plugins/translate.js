@@ -4,13 +4,13 @@ const tld = 'cn'
 
 let handler = async (m, { args, usedPrefix, command }) => {
     let err = `
-Pengunaan:
-${usedPrefix + command} <bahasa> [teks]
+Use:
+${usedPrefix + command} <language> [text]
 
-Contoh:
-${usedPrefix + command} id We are love Stikerin
+Example:
+${usedPrefix + command} Watch Food Wars Kid 
 
-Daftar bahasa yang didukung:
+List of supported languages:
 ${bahasa.map(v => `${v.code} : ${v.country}`).join`\n`}
 `.trim()
 
@@ -38,7 +38,7 @@ ${bahasa.map(v => `${v.code} : ${v.country}`).join`\n`}
         if (result) m.reply(result[0])
     }
 }
-handler.help = ['translate'].map(v => v + ' <lang> <teks>')
+handler.help = ['translate'].map(v => v + ' <lang> <text>')
 handler.tags = ['tools']
 handler.command = /^(tr(anslate)?)$/i
 
