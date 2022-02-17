@@ -15,6 +15,6 @@ let handler = async (m, { text, usedPrefix, command }) => {
 
 handler.help = ['darkjoke']
 handler.tags = ['fun']
-handler.command = /^(cuaca|weather)$/i
+handler.command = /^((drag|dark)joke)$/i
 
 module.exports = handler
