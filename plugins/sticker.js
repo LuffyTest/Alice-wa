@@ -17,7 +17,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
       stiker = await sticker(img, false, packname, author)
     } else if (m.quoted.text) {
       if (isUrl(m.quoted.text)) stiker = await sticker(false, m.quoted.text, packname, author)
-      else throw 'URL tidak valid! akhiri dengan jpg/gif/png'
+      else throw 'Invalid URL! end with jpg/gif/png'
     }
   } catch (e) {
     throw e
@@ -25,7 +25,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   finally {
     if (stiker) await conn.sendFile(m.chat, stiker, '', '', m, 0, { asSticker: true })
     else {
-      return conn.sendButton(m.chat, `Balas media dengan perintah *${usedPrefix + command}*`, '© stikerin', 'Aktifkan Stiker Otomatis', '.1 s', m)
+      return conn.sendButton(m.chat, `Reply to media with commands *${usedPrefix + command}*`, '© Alice 🥀', 'Enable Automatic Stickers', '.1 s', m)
     }
   }
 }
