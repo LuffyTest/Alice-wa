@@ -1,30 +1,18 @@
-const axios = require('axios')
+const fetch = require('node-fetch')
 
-
-
-
-let handler = async (m, { conn, args  , usedPrefix, command })=>{
-
-
-  
-    try{
-
-        const response = axios.get(`https://v2.jokeapi.dev/joke/dark`)
-        const res = await response
-        
-        const category = res.data.category
-        const delivery = res.data.delivery
-        const lang= res.data.lang
-        
-
-        conn.reply(m.chat,`
-        🌸 Category: ${category}\n💮 Delivery: ${delivery}\n💦 Language: ${lang}
-        `.trim(),m)
-    }catch(e){
-throw 'not found' 
-console.log(e)
-
-    }
+let handler = async (m, { text, usedPrefix, command }) => {
+    let res = await fetch(API('https://v2.jokeapi.dev/', '/joke/dark', {
+        q: text,
+    }))
+    if (!res.ok) throw eror
+    let json = await res.json()
+    if (json.cod != 200) throw json
+    m.reply(`
+🎗 Category: res.data.category
+🎋 Joke : res.data.delivery
+🧨delivery: res.data.delivery
+ `.trim())
+}
 
 handler.help = ['darkjoke']
 handler.tags = ['fun']
