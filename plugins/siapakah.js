@@ -6,12 +6,12 @@ let handler = async (m, { conn, participants, command, text }) => {
         who = member[Math.floor(Math.random() * member.length)]
     }
     let jawab = `
-*Pertanyaan:* ${command} ${text}?
-*Jawaban:* @${who.replace(/@.+/, '')}
+*Question:* ${command} ${text}?
+*Answer:* @${who.replace(/@.+/, '')}
     `.trim()
     conn.reply(m.chat, jawab, m)
 }
-handler.help = ['', 'kah'].map(v => 'siapa' + v + ' <teks>')
+handler.help = ['', 'kah'].map(v => 'siapa' + v + ' <text>')
 handler.tags = ['kerang']
 handler.command = /^siapa(kah)?$/i
 
