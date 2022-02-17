@@ -34,7 +34,7 @@ let handler = async (m, { conn, command, text, isPrems, isOwner }) => {
 let _thumb = {}
 try { if (isVideo) _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
 catch (e) { }
-if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp' + (3 + /2$/.test(command)), `
+if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp3', `
 🔻 𝐓𝐈𝐓𝐋𝐄 : *${title}*
 🔻 𝐅𝐈𝐋𝐄 𝐒𝐈𝐙𝐄 : *${filesizeF}*
 🔻 𝐒𝐄𝐑𝐕𝐄𝐑 : *${usedServer}*
