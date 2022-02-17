@@ -5,7 +5,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let [atas, bawah] = text.split`|`
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
-    if (!mime) throw `Balas gambar dengan perintah *${usedPrefix + command} <${atas ? atas : 'teks atas'}>|<${bawah ? bawah : 'teks bawah'}>*`
+    if (!mime) throw `Reply image with command *${usedPrefix + command} <${atas ? atas : 'top text'}>|<${bawah ? bawah : 'bottom text'}>*`
     if (!/image\/(jpe?g|png)/.test(mime)) throw `Media tidak didukung!`
     let img = await q.download()
     let url = await uploadImage(img)
@@ -13,7 +13,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     stiker = await sticker5(false, meme, packname, author)
     if (stiker) await conn.sendFile(m.chat, stiker, '', '', m, 0, { asSticker: true })
 }
-handler.help = ['stikermeme <teks atas>|<teks bawah>']
+handler.help = ['stikermeme <top text>|<bottom text>']
 handler.tags = ['sticker']
 handler.command = /^(s(tic?ker)?meme)$/i
 
