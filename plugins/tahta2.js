@@ -27,7 +27,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
       ])
         .on('error', () => m.reply(`_*Error!*_`))
         .on('exit', () => {
-          conn.sendFile(m.chat, './src/Aesthetic/tahta.jpg', 'harta5.jpg', '© stikerin', m)
+          conn.sendFile(m.chat, './src/Aesthetic/tahta.jpg', 'harta5.jpg', '© Alice 🥀', m)
           fs.unlinkSync('./src/Aesthetic/tahta.jpg')
         })
     } catch (e) {
@@ -36,7 +36,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
     }
   } else throw `contoh:\n${usedPrefix + command} ariffb`
 }
-handler.help = ['harta2'].map(v => v + ' <teks>')
+handler.help = ['harta2'].map(v => v + ' <text>')
 handler.tags = ['tools']
 handler.command = /^(harta|ht|tahta)2$/i
 
