@@ -4,8 +4,8 @@ const fetch = require('node-fetch')
 let handler = async (m, { conn, usedPrefix, command }) => {
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
-  if (!mime) throw `Kirim/balas gambar dengan perintah *${usedPrefix + command}*`
-  if (!/image\/(jpe?g|png)/.test(mime)) throw `Media tidak didukung!`
+  if (!mime) throw `Send/reply image with command *${usedPrefix + command}*`
+  if (!/image\/(jpe?g|png)/.test(mime)) throw `Media not supported!`
   let img = await q.download()
   let url = await (uploadImage)(img)
   let anime = `data:${mime};base64,${img.toString('base64')}`
@@ -14,7 +14,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   let json = await res.json()
   let { anilist, filename, episode, from, to, similarity, video, image } = json.result[0]
   conn.sendVideo(m.chat, video, `
-  ${similarity < 0.89 ? 'Saya memiliki keyakinan rendah tentang hal ini' : ''}
+  ${similarity < 0.89 ? 'I have low confidence about this' : ''}
 
 Anilist: *${anilist}*
 Nama File: *${filename}*
