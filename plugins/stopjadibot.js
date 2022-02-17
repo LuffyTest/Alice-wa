@@ -1,7 +1,7 @@
 let handler = async (m, { conn }) => {
-  if (global.conn.user.jid == conn.user.jid) conn.reply(m.chat, 'Kenapa nggk langsung ke terminalnya?', m)
+  if (global.conn.user.jid == conn.user.jid) conn.reply(m.chat, 'Why not go directly to the terminal?', m)
   else {
-    await m.reply('Berhasil menghentikan bot')
+    await m.reply('Successfully stopped the bot')
     conn.close()
   }
 }
