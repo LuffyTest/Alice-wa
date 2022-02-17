@@ -240,7 +240,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       break
     default:
       if (!/[01]/.test(command)) throw `
-┌「 *Daftar Opsi* 」${isOwner ? '\n├ anon\n├ antispam\n├ antitroli\n├ autoread\n├ backup\n├ clear\n├ grouponly\n├ jadibot\n├ nsfw\n├ public\n├ mycontact' : ''}
+┌「 *List option:* 」${isOwner ? '\n├ anon\n├ antispam\n├ antitroli\n├ autoread\n├ backup\n├ clear\n├ grouponly\n├ jadibot\n├ nsfw\n├ public\n├ mycontact' : ''}
 ├ antilink
 ├ autolevelup
 ├ delete
@@ -257,7 +257,7 @@ ${usedPrefix}off welcome
       throw false
   }
   m.reply(`
-*${type}* successful in *${isEnable ? 'nyala' : 'mati'}kan* ${isAll ? 'For this bot' : isUser ? '' : 'For this bot'}
+*${type}* successful in *${isEnable ? 'turned on' : 'turned off'}* ${isAll ? 'For this bot..🤍🥀' : isUser ? '' : 'For this chat...🤍🥀'}
 `.trim())
 }
 handler.help = ['on', 'off'].map(v => v + ' <option>')
