@@ -1,9 +1,9 @@
 let handler = async (m, { conn, usedPrefix, command }) => {
     await conn.sendButton(m.chat, `“${conn.pickRandom(global.galau)}”`, '© Alice 🥀', ':(', `${usedPrefix + command}`, m)
 }
-handler.help = ['galau']
+handler.help = ['quotes1']
 handler.tags = ['quotes']
-handler.command = /^(galau)$/i
+handler.command = /^(quotes2)$/i
 
 module.exports = handler
 
