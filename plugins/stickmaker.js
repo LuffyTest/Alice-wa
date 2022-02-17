@@ -12,7 +12,7 @@ ${effects.map(effect => `├ ${effect}`).join('\n')}
 └────
 
 Use:
-${usedPrefix + command} <efek>
+${usedPrefix + command} <effect>
 
 Example:
 ${usedPrefix + command} jail
