@@ -1,17 +1,17 @@
 let handler = async (m, { conn, text }) => {
   conn.hartatahta = conn.hartatahta ? conn.hartatahta : {}
-  if (m.chat in conn.hartatahta) throw 'Masih ada yang sedang membuat\nTeks Harta Tahta\ndi chat ini... tunggu sampai selesai'
+  if (m.chat in conn.hartatahta) throw 'Someone is still making\nThe text of the Throne\n this chat...wait for it to finish'
   if (!text) throw `Uhm...Teksnya mana?`
   else conn.hartatahta[m.chat] = true
-  m.reply('_Sedang membuat..._\n*Mohon tunggu sekitar 1 menit*')
+  m.reply('_Creating..._\n*Please wait about 1 minute*')
   try {
     let img = await ht(text)
-    conn.sendFile(m.chat, img, 'Harta Tahta.png', '*© Nurutomo*\nMade with FFmpeg', m)
+    conn.sendFile(m.chat, img, 'Treasure of the Throne.png', '*© Nurutomo*\nMade with FFmpeg', m)
   } finally {
     delete conn.hartatahta[m.chat]
   }
 }
-handler.help = ['tahta <teks>']
+handler.help = ['tahta <text>']
 handler.tags = ['nulis']
 handler.command = /^((harta)?tahta)$/i
 
