@@ -3,7 +3,7 @@ let handler = async (m, { conn }) => {
     let id = m.chat
     if (!(id in conn.tekateki)) throw 0
     let json = conn.tekateki[id][1]
-    conn.reply(m.chat, '```' + json.bantuan + '```\nBalas soalnya, bukan pesan ini!', conn.tekateki[id][0])
+    conn.reply(m.chat, '```' + json.bantuan + '```\nReply to the question, not this message!', conn.tekateki[id][0])
 }
 handler.command = /^tete$/i
 
