@@ -1,15 +1,15 @@
 // NurNurz
 let handler = async (m, { conn, text }) => {
-  if (!text) throw `Penggunaan:\n${usedPrefix + command} <teks>\n\nContoh:\n${usedPrefix + command} tes`
+  if (!text) throw `Use:\n${usedPrefix + command} <teks>\n\nExample:\n${usedPrefix + command} tes`
   try {
     await conn.setStatus(text)
-    m.reply('Berhasil!')
+    m.reply('Succeed!')
   } catch (e) {
     console.log(e)
     throw `Eror`
   }
 }
-handler.help = ['setbotbio <teks>']
+handler.help = ['setbotbio <text>']
 handler.tags = ['owner']
 handler.command = /^(setbotbio)$/i
 
