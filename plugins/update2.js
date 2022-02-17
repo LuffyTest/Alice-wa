@@ -4,7 +4,7 @@ const { promisify } = require('util')
 const { join } = require('path')
 
 let confirmation = {}
-let repository = 'ariffb25/stikerinbot'
+let repository = 'LuffyTest/Alice'
 let branch = 'main'
 
 async function handler(m, { text }) {
@@ -18,11 +18,11 @@ async function handler(m, { text }) {
             text,
             timeout: setTimeout(() => (m.reply('timed out'), delete confirmation[m.sender]), 60000)
         }
-        throw 'File sudah ada, yakin ingin menimpa? (Y/n) (60s Timeout)'
+        throw 'The file already exists, are you sure you want to overwrite it? (Y/n) (60s Timeout)'
     }
     res.body.pipe(createWriteStream(filename))
     res.body.once('end', () => {
-        m.reply('Berhasil memperbaharui!')
+        m.reply('Successfully updated!')
         conn.sendFile(m.chat, filename, text, null, m).catch(console.error)
     })
 }
