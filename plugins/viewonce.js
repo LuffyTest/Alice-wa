@@ -1,9 +1,9 @@
 let handler = async (m, { conn, usedPrefix, command }) => {
-    if (!m.quoted) throw `balas pesan yang hanya bisa dilihat sekali`
+    if (!m.quoted) throw `reply to messages that can only be seen once..`
     try {
         await conn.copyNForward(m.chat, await conn.loadMessage(m.chat, m.quoted.id), false, { readViewOnce: true })
     } catch (e) {
-        throw `Balas pesan yang hanya bisa dilihat sekali dengan perintah *${usedPrefix + command}*`
+        throw `Reply to messages that can only be viewed once with the command *${usedPrefix + command}*`
     }
 }
 
