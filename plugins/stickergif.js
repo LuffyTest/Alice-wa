@@ -2,7 +2,7 @@ const fs = require('fs')
 const ffmpeg = require('fluent-ffmpeg')
 
 let handler = async (m, { conn, usedPrefix, command }) => {
-    gagal = `Balas media dengan perintah *${usedPrefix + command}*`
+    gagal = `Reply to media with commands *${usedPrefix + command}*`
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
     if (/image/.test(mime)) {
@@ -43,7 +43,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
                 console.log(`Error : ${e}`)
                 fs.unlinkSync(media)
                 tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-                m.reply(`_*Gagal, pada saat mengkonversi ${tipe} ke stiker*_`)
+                m.reply(`_*Failed to convert ${tipe} to sticker*_`)
             })
             .on('end', function () {
                 console.log('Finish')
