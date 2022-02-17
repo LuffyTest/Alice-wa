@@ -8,22 +8,22 @@ let handler = async(m, { conn, usedPrefix, command }) => {
   try {
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
-    if(!(/image/.test(mime))) return m.reply(`balas gambar dengan caption *.sfire*`)
+    if(!(/image/.test(mime))) return m.reply(`reply to the image with the caption *.sfire*`)
     let img = await q.download()
     img = `https://api.zeks.me/api/burning-image?apikey=administrator&image=${await up(img)}`
-    m.reply(`tunggu...`)
-    if (!img) throw `balas gambar dengan caption *${usedPrefix + command}*`
+    m.reply(`wait...`)
+    if (!img) throw `reply to image with caption *${usedPrefix + command}*`
     stiker = await sticker(null, img, global.packname, global.author)
   } finally {
     if (stiker) conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       quoted: m
     })
-    else throw 'Gagal membuat sticker, Sepertinya ada yg salah!'
+    else throw 'Failed to make a sticker, looks like something went wrong!'
   }
 }
 
 
-handler.help = ["sfire", "stickerfire", "stikerfire"].map(v => v + " [reply/kirim gambar]")
+handler.help = ["sfire", "stickerfire", "stikerfire"].map(v => v + " [reply/send picture]")
 handler.tags = ['sticker']
 handler.command = /^((s|sticker|stiker)?fire)/i
 handler.limit = true
