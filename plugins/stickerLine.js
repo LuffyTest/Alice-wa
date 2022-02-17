@@ -3,8 +3,8 @@ const { sticker5 } = require('../lib/sticker')
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 
-    if (!args[0]) throw `Penggunaan:\n${usedPrefix + command} <url>\n\ncontoh:\n${usedPrefix + command} https://store.line.me/stickershop/product/8149770`
-    if (!args[0].match(/(https:\/\/store.line.me\/stickershop\/product\/.*)/gi)) throw `url salah`
+    if (!args[0]) throw `Use:\n${usedPrefix + command} <url>\n\nExample:\n${usedPrefix + command} https://store.line.me/stickershop/product/8149770`
+    if (!args[0].match(/(https:\/\/store.line.me\/stickershop\/product\/.*)/gi)) throw `wrong url`
 
     let res = await fetch(global.API('zeks', '/api/linesticker', { link: args[0] }, 'apikey'))
     if (!res.ok) throw eror
@@ -20,7 +20,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         await conn.sendFile(m.chat, stiker, '', '', m, 0, { asSticker: true })
         await conn.delay(1500)
     }
-    m.reply('_*Selesai*_')
+    m.reply('_Finished 🥀_')
 
 }
 handler.help = ['stikerline <url>']
