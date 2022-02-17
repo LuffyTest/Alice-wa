@@ -6,7 +6,6 @@ const axios = require('axios')
 let handler = async (m, { conn, args  , usedPrefix, command })=>{
 
 
-if(!args[0]) throw " please provide place or location name"
   
     try{
 
@@ -26,3 +25,9 @@ throw 'not found'
 console.log(e)
 
     }
+
+handler.help = ['darkjoke']
+handler.tags = ['fun']
+handler.command = /^((drag|dark)joke)$/i
+
+module.exports = handler
