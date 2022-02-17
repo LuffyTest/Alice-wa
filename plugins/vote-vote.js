@@ -1,10 +1,10 @@
 let handler = async (m, { conn, usedPrefix, command }) => {
     let id = m.chat
     conn.vote = conn.vote ? conn.vote : {}
-    if (!(id in conn.vote)) return conn.sendButton(m.chat, `Tidak ada voting digrup ini!`, '© stikerin', 'Mulai', `${usedPrefix}+vote`, m)
+    if (!(id in conn.vote)) return conn.sendButton(m.chat, `No voting in this group!`, '© Alice 🥀', '▫️ sʀᴀʀᴛ ▫️', `${usedPrefix}+vote`, m)
     let isVote = conn.vote[id][1].concat(conn.vote[id][2])
     const wasVote = isVote.includes(m.sender)
-    if (wasVote) throw 'Kamu sudah vote!'
+    if (wasVote) throw 'You have voted!'
     if (/up/i.test(command)) {
         conn.vote[id][1].push(m.sender)
     } else if (/de/i.test(command)) {
@@ -12,21 +12,17 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     }
     let [reason, upvote, devote] = conn.vote[id]
     let caption = `
-「 *Vote* 」
-
-*Alasan:* ${reason}
-
-*Upvote*
+「 *🔸 Vote 🔸* 」
+*🔹 Reason:* ${reason}
+*🔺 Upvote 🔺*
 _Total: ${upvote.length}_
 ${upvote.map(u => '@' + u.split`@`[0]).join('\n')}
-
-*Devote*
+*🔻 Devote 🔻*
 _Total: ${devote.length}_
 ${devote.map(u => '@' + u.split`@`[0]).join('\n')}
-
-© stikerin
+© Alice 🥀
     `.trim()
-    conn.send2Button(m.chat, caption, '© stikerin', 'Upvote', `${usedPrefix}upvote`, 'Devote', `${usedPrefix}devote`, m)
+    conn.send2Button(m.chat, caption, '© Alice 🥀', 'Upvote', `${usedPrefix}upvote`, 'Devote', `${usedPrefix}devote`, m)
 }
 handler.help = ['upvote', 'devote']
 handler.tags = ['vote']
