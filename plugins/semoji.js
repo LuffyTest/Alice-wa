@@ -4,11 +4,11 @@ const { EmojiAPI } = require("emoji-api")
 const emoji = new EmojiAPI()
 
 let handler = async (m, { conn, args, usedPrefix, command, isPrems }) => {
-  let er = `contoh:
-*${usedPrefix}emo(spasi)ap(spasi)❤️*
-*${usedPrefix}emo ap ❤️*
+  let er = `🎐 Example:
+*${usedPrefix}semoji (space) option (space)❤️*
+*${usedPrefix}semoji apple ❤️*
 
-┌〔 Opsi 〕
+┌〔 Option 〕
 ├ ap = apple
 ├ fa = facebook
 ├ go = google
@@ -23,9 +23,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isPrems }) => {
 ├ wh = whatsapp
 └────
 
-Hanya bisa 1 emoji, perhatikan spasi, jangan spam!
-
-Mau bikin stiker bisa 2/3 emoji? klik http://wa.me/62851577296390?text=%23stikeremoji`
+Can only be 1 emoji, pay attention to spaces, don't spam!`
   if (!args[0]) throw er
 
   let template = (args[0] || '').toLowerCase()
