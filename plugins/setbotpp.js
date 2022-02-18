@@ -4,7 +4,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let mime = (q.msg || q).mimetype || ''
     if (/image/.test(mime)) {
         let img = await q.download()
-        if (!img) throw `Balas stiker dengan perintah *${usedPrefix + command}*`
+        if (!img) throw `Reply to the sticker with an order *${usedPrefix + command}*`
         conn.updateProfilePicture(bot, img)
         m.reply('Berhasil!')
     }
