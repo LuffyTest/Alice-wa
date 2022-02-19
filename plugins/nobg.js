@@ -1,4 +1,8 @@
 const axios = require("axios");
+const axios = require('axios');
+const FormData = require('form-data');
+const fs = require('fs');
+const path = require('path');
 
 let handler = async (m, { conn, usedPrefix, command }) => {
   let q = m.quoted ? m.quoted : m;
@@ -9,7 +13,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let data = await axios.post(
       "https://api.remove.bg/v1.0/removebg",
       {
-        "api-key": "ipuv9r5gDyxvUNQCRD8wJWEt",
+        "X-Api-Key": "ipuv9r5gDyxvUNQCRD8wJWEt",
         image: imgbase64,
       }
     );
