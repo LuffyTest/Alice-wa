@@ -8,9 +8,9 @@ let handler = async (m, { text, usedPrefix, command }) => {
     let json = await res.json()
     if (json.cod != 200) throw json
     m.reply(`
-🎗 Category: %category
-🎋 Joke : %delivery
-🧨delivery: %delivery
+🎗 Category: ${json.category}
+🎋 Joke : ${json.setup}
+🧨 delivery: ${json.delivery}
  `.trim())
 }
 
