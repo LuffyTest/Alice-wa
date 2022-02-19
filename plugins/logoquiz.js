@@ -11,7 +11,7 @@ let handler = async (m, { conn, usedPrefix }) => {
   conn.logoquiz = conn.logoquiz ? conn.logoquiz : {}
   let id = m.chat
   if (id in conn.logoquiz) {
-    conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.logoquiz[id][0])
+    conn.reply(m.chat, 'There are still unanswered questions in this chat', conn.logoquiz[id][0])
     throw false
   }
   let src = await (await fetch('https://raw.githubusercontent.com/Aidils60/database/main/logoquizid.json')).json()
@@ -19,15 +19,15 @@ let handler = async (m, { conn, usedPrefix }) => {
   let caption = `
   ${json.deskripsi}
 Timeout *${(timeout / 1000).toFixed(2)} detik*
-Ketik ${usedPrefix}hints untuk bantuan
+Type ${usedPrefix}hints untuk bantuan
 Bonus: ${poin} XP
     `.trim()
   conn.logoquiz[id] = [
-    await conn.sendButtonImg(m.chat, await (await fetch(json.img)).buffer(), caption, '© idilBot', 'Bantuan', '.hints', m)
+    await conn.sendButtonImg(m.chat, await (await fetch(json.img)).buffer(), caption, '© Alice 🥀', 'Help', '.hints', m)
     ,
     json, poin,
     setTimeout(async () => {
-      if (conn.logoquiz[id]) await conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, '© idilBot', 'Logo Quiz', '.logoquiz', conn.logoquiz[id][0])
+      if (conn.logoquiz[id]) await conn.sendButton(m.chat, `Time is up!\nThe answer is *${json.jawaban}*`, '© idilBot', 'Logo Quiz', '.logoquiz', conn.logoquiz[id][0])
       delete conn.logoquiz[id]
     }, timeout)
   ]
