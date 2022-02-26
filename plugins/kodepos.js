@@ -6,12 +6,12 @@ let handler = async (m, { text, usedPrefix, command }) => {
     if (!res.ok) throw `${res.status} ${res.statusText}`
     let json = await res.json()
     if (!json.status) throw json
-    let mes = json.result.map((v, i) => `${i + 1}. Provinsi: ${v.province}\nKota: ${v.city}\nKecamatan: ${v.subdistrict}\nPerkotaan: ${v.urban}\nKode Pos: ${v.postalcode}`).join('\n\n')
+    let mes = json.result.map((v, i) => `${i + 1}. province: ${v.province}\nCity: ${v.city}\nKecamatan: ${v.subdistrict}\nUrban: ${v.urban}\nPostal code: ${v.postalcode}`).join('\n\n')
     m.reply(mes)
 }
-handler.help = ['kodepos <kota>']
+handler.help = ['zipcode <city>']
 handler.tags = ['tools']
-handler.command = /^kodepos$/i
+handler.command = /^zipcode$/i
 
 handler.limit = 0
 
