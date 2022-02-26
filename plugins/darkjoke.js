@@ -2,12 +2,11 @@ const fetch = require('node-fetch')
 
 let handler = async (m, { text, usedPrefix, command }) => {
     let res = await fetch(API('https://v2.jokeapi.dev/', '/joke/dark', {
-        q: text,
-    }))
-    if (!res.ok) throw eror
+    if (!res.ok) throw `${res.status} ${res.statusText}`
     let json = await res.json()
-    if (json.cod != 200) throw json
-    m.reply(`
+  m.reply(json.dark)
+}
+
 🎗 Category: ${json.category}
 🎋 Joke : ${json.setup}
 🧨 delivery: ${json.delivery}
