@@ -291,11 +291,11 @@ module.exports = {
           if (xp > 200) m.reply('Ngecit -_-') // Hehehe
           else m.exp += xp
           if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-            this.reply(m.chat, `Limit kamu habis, silahkan beli melalui *${usedPrefix}buy*`, m)
+            this.reply(m.chat, `Your limit is up, please buy via *${usedPrefix}buy*`, m)
             continue // Limit habis
           }
           if (plugin.level > _user.level) {
-            this.reply(m.chat, `diperlukan level ${plugin.level} untuk menggunakan perintah ini. Level kamu ${_user.level}`, m)
+            this.reply(m.chat, `${plugin.level} level is required to use this command. Your level is ${_user.level}`, m)
             continue // Jika levelnya belum tercapai
           }
           let extra = {
@@ -453,7 +453,7 @@ module.exports = {
 Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan
 
 ketik *.on delete* untuk mematikan pesan ini
-`.trim(), '© Rias Gremory', 'Turn off Antidelete', ',on delete', m.message)
+`.trim(), '© Alice 🥀', 'Turn off Antidelete', ',on delete', m.message)
     this.copyNForward(m.key.remoteJid, m.message).catch(e => console.log(e, m))
   },
   async onCall(json) {
@@ -482,11 +482,11 @@ ketik *.on delete* untuk mematikan pesan ini
     if (!db.data.chats[jid].descUpdate) return
     if (!desc) return
     let caption = `
-    @${descOwner.split`@`[0]} telah mengubah deskripsi grup.
+    @${descOwner.split`@`[0]} has changed the group description.
 
     ${desc} 
         `.trim()
-    this.sendButton(jid, caption, '© Rias Gremory', 'Turn off', ',off desc')
+    this.sendButton(jid, caption, '© Alice 🥀', 'Turn off', ',off desc')
 
   }
 }
