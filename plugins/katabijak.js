@@ -1,20 +1,20 @@
 const { quotes } = require('../lib/scrape')
 let handler = async (m, { command, args, usedPrefix }) => {
-    let er = `Pengunaan:
-${usedPrefix + command} <teks>
+    let er = `Use:
+${usedPrefix + command} <text>
 
-Contoh:
-${usedPrefix + command} cinta
+Example:
+${usedPrefix + command} love
 
-┌「 *Pilihan* 」
-├ cinta
-├ rindu
-├ mimpi
-├ sendiri
-├ sabar
-├ kesedihan
-├ pernikahan
-├ kemerdekaan
+┌「 *Choice* 」
+├ love
+├ miss
+├ dream
+├ alone
+├ patient
+├ sadness
+├ wedding
+├ independence
 └────`.trim()
     if (!args[0]) throw er
     switch (args[0].toLowerCase()) {
@@ -39,8 +39,8 @@ ${usedPrefix + command} cinta
             throw er
     }
 }
-handler.help = ['katabijak'].map(v => v + ' <opsi>')
+handler.help = ['wordsofwisdom'].map(v => v + ' <option>')
 handler.tags = ['internet']
-handler.command = /^(katabijak|jagokata)$/i
+handler.command = /^(katabijak|wordsofwisdom)$/i
 
 module.exports = handler 
