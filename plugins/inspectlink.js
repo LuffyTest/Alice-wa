@@ -13,8 +13,8 @@ let handler = async (m, { conn, text }) => {
 ${res.id}
 *Subject:* ${res.subject}
 *Made by* @${res.id.split('-')[0]} pada *${formatDate(res.creation * 1000)}*${res.subjectOwner ? `
-*Title changed* oleh @${res.subjectOwner.split`@`[0]} on *${formatDate(res.subjectTime * 1000)}*`: ''}${res.descOwner ? `
-*Description changed* oleh @${res.descOwner.split`@`[0]} on *${formatDate(res.descTime * 1000)}*` : ''}
+*Title changed by*@${res.subjectOwner.split`@`[0]} on *${formatDate(res.subjectTime * 1000)}*`: ''}${res.descOwner ? `
+*Description changed by* @${res.descOwner.split`@`[0]} on *${formatDate(res.descTime * 1000)}*` : ''}
 *Number of Members:* ${res.size}
 *Members who are known to join*: ${res.participants ? '\n' + res.participants.map((user, i) => ++i + '. @' + user.id.split`@`[0]).join('\n').trim() : 'There is not any'}
 ${res.desc ? `*Description:*
