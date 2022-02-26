@@ -9,6 +9,7 @@ let handler = async (m, { }) => {
 🎗 Category: ${json.category}
 🎋 Joke: ${json.setup}
 🧨 delivery: ${json.delivery}
+🔖 Language: ${json.lang}
  `.trim())
 }
 
