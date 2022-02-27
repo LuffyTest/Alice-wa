@@ -30,9 +30,9 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 *🍃 Server:* ${usedServer}
 `.trim(), '© Alice 🤍🥀', 'Audio', `.yta ${vid.url}`, 'Video', `.yt ${vid.url}`)
 }
-handler.help = ['song','play','?'].map(v => v + ' <query>')
+handler.help = ['song','play','?','yt'].map(v => v + ' <query>')
 handler.tags = ['downloader']
-handler.command = /^(play|song)$/i
+handler.command = /^(play|yt|song)$/i
 
 handler.exp = 0
 
