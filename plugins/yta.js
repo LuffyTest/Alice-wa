@@ -18,5 +18,6 @@ handler.help = ['mp3/yta'].map(v => 'yt' + v + ` <url>`)
 handler.tags = ['downloader']
 handler.command = /^yt(a|mp3)$/i
 
-
+handler.exp = 0
+handler.limit = 30
 module.exports = handler 
