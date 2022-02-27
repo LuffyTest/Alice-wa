@@ -34,6 +34,4 @@ handler.help = ['song','play','?','yt'].map(v => v + ' <query>')
 handler.tags = ['downloader']
 handler.command = /^(play|yt|song)$/i
 
-handler.exp = 0
-
 module.exports = handler
