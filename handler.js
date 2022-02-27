@@ -53,7 +53,7 @@ module.exports = {
           if (!isNumber(user.premiumTime)) user.premiumTime = 0
         } else global.db.data.users[m.sender] = {
           exp: 0,
-          limit: 10,
+          limit: 50,
           lastclaim: 0,
           registered: false,
           name: this.getName(m.sender),
