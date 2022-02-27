@@ -51,3 +51,4 @@ async function igdl(url) {
     })
   })
   return results
+}
