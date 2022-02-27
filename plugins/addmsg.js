@@ -16,5 +16,4 @@ handler.help = ['vn', 'msg', 'video', 'gif', 'audio', 'img', 'sticker'].map(v =>
 handler.tags = ['database']
 handler.command = /^(\+|add)(vn|msg|video|audio|img|stic?ker|gif)$/
 
-
 module.exports = handler
