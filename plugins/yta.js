@@ -12,8 +12,8 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
  ${isLimit ? 'Used ': ''}
 `.trim(), m)
   if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp3', `
-*Title:* ${title}
-*Filesize:* ${filesizeF}
+*🔮 Title:* ${title}
+*🔖 Filesize:* ${filesizeF}
 `.trim(), m, null, {
   asDocument: chat.useDocument
 })
@@ -32,6 +32,6 @@ handler.botAdmin = false
 
 handler.fail = null
 handler.exp = 0
-handler.limit = true
+handler.limit = false
 
 module.exports = handler
