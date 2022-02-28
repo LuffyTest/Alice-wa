@@ -1,23 +1,47 @@
-let fetch = require("node-fetch");
 let axios = require("axios");
+let MessageType = require("@adiwajshing/baileys");
+let { image } = MessageType
+let fetch = require('node-fetch')
+let handler = async (m, { conn, args, text, isPrems }) => {
+    let chat = global.DATABASE.data.chats[m.chat]
+    if (chat.nsfw) { 
+    
+    if (!text) return m.reply("_Masukkan Link XNXX_")
+        await m.reply(global.wait)
+  try {
+let res = await axios.get(`https://api.lolhuman.xyz/api/xnxx?apikey=711994c4ea9aa5a0ec39f7f2&url=${text}`)
+let json = res.data
+let data = json.result
+let url = data.link
 
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `Linknya mana?`;
-  let vidurl = args[0].replace("xnxx", "onlineonlineoxnn");
-  let res = axios
-    .get(
-      API("https://www.online-downloader.com", "/DL/YT.php", {
-        videourl: vidurl,
-        mstr: "9773",
-        _: "1633710434836",
-      })
-    )
-    .then((res) => {
-      if (res.status != 200) throw `${res.status} ${res.statusText}`;
-      let data = JSON.parse(res.data.replace(/[()]/g, ""));
-      conn.sendFile(m.chat, data.Video_6_Url, "bokep.mp4", "bokep", m);
-    });
-};
+let txt = `
+*Title:* ${data.title}
+*Duration:* ${data.duration}
+*Views:* ${data.view}
+*Rating:* ${data.rating}
+*Like:* ${data.like}
+*Dislike:* ${data.dislike}
+*Comment:* ${data.comment}
+*Tags:* ${data.tag.join(", ")}
+*Description:* ${data.description}
+*DOWNLOAD*
+`.trim()
+
+for (let i = 0; i < data.link.length; i++) {
+    txt += `\nType: ${data.link[i].type}\n`
+    txt += `Link: ${data.link[i].link}\n`
+   }
+    txt += '\n*SGDC-BOT*'
+      conn.sendFile(m.chat, data.thumbnail, "STOP-COLY.jpg", txt, m)
+      }catch(e){
+          m.reply ("ERROR")
+          console.log (e)
+       }
+   } else {
+       m.reply('```Perlu Mengaktifkan Mode NSFW```')
+    }
+ }
+
 handler.help = ["xnxx"].map((v) => v + " <Link>");
 handler.tags = ["premium"];
 handler.command = /^(xnxx)$/i;
