@@ -30,6 +30,7 @@ let handler = async (m, { conn, text }) => {
     }
    }
 handler.command = /^(xnxxsearch|searchxnxx|xnxx)$/
-handler.tags = premium
+handler.tags = ["premium"];
 handler.premium = true
+
 module.exports = handler
