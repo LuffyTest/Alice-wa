@@ -4,10 +4,6 @@ let { image } = MessageType
 let fetch = require('node-fetch')
 let handler = async (m, { conn, args, text, isPrems }) => {
     let chat = global.DATABASE.data.chats[m.chat]
-    if (chat.nsfw) { 
-    
-    if (!text) return m.reply("_Masukkan Link XNXX_")
-        await m.reply(global.wait)
   try {
 let res = await axios.get(`https://api.lolhuman.xyz/api/xnxx?apikey=711994c4ea9aa5a0ec39f7f2&url=${text}`)
 let json = res.data
