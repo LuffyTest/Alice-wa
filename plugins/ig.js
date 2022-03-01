@@ -1,16 +1,23 @@
-const hx = require('hxz-api')
+const { igdl } = require('../lib/scrape')
 
-let handler = async (m, { conn, args }) => {
-  if (!args[0]) throw '𝚄𝙼𝙷...𝚆𝙴𝚁𝙴-𝙸𝚂-𝚃𝙷𝙴-𝚄𝚁𝙻?'
+let handler = async (m, { conn, args, usedPrefix, command }) => {
 
-  let res = await hx.igdl(args[0])
-  for (let i = 0; i < res.length; i++) await conn.sendFile(m.chat, res[i].url, '', '', m)
+  if (!args[0]) throw `Use:\n${usedPrefix + command} <url>\n\nExample:\n${usedPrefix + command} https://www.instagram.com/p/CQU21b0JKwq/`
+  if (!args[0].match(/https:\/\/www.instagram.com\/.*(p|reel|tv)/gi)) throw `wrong url, this command to download post/reel/tv`
+
+  igdl(args[0]).then(async res => {
+    let igdl = JSON.stringify(res)
+    let json = JSON.parse(igdl)
+    await m.reply(global.wait)
+    for (let { downloadUrl, type } of json) {
+      conn.sendFile(m.chat, downloadUrl, 'ig' + (type == 'image' ? '.jpg' : '.mp4'), '© Alice 🥀', m)
+    }
+  })
 }
 handler.help = ['ig'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^(ig)$/i
+handler.command = /^(ig|instagram)$/i
 
-handler.limit = true
-handler.command = /^(ig(dl)|insta?)$/i
+handler.limit = 1
 
 module.exports = handler
