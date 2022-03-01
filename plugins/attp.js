@@ -22,6 +22,6 @@ let handler = async (m, { conn, text, command }) => {
 handler.help = new Array(2).fill('attp').map((v, i) => v + (i + 1) + ' <text>')
 handler.tags = ['sticker']
 
-handler.command = /^attp[1-2]?$/i
+handler.command = /^attp?$/i
 
 module.exports = handler
