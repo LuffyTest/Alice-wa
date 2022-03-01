@@ -21,7 +21,7 @@ global.APIs = { // API Prefix
 global.APIKeys = { // APIKey nya disini
   // 'https://website': 'apikey'
   'https://melcanz.com': 'obefhhqP',
-  'https://leyscoders-api.herokuapp.com': 'dappakntlll'
+  'https://leyscoders-api.herokuapp.com': 'dappakntlll',
   'https://api.reysekha.my.id': 'apirey',
   'https://bx-hunter.herokuapp.com': 'Ikyy69',
   'https://hardianto.xyz': 'hardianto',
