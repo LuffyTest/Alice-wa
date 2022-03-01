@@ -1,23 +1,16 @@
-const HX = require('hxz-api')
-let fetch = require('node-fetch')
+let scraper = require('@bochilteam/scraper')
 
 let handler = async (m, { conn, args }) => {
-  m.reply('wait')
-  let me = conn.user.name
-  let res = await fetch('https://api-xcoders.xyz/api/download/ig?url=' + args[0] + '&apikey=DPZDDDpHHM')
-  let json = await res.json()
-  let result = json.result.url
-  let txt = `
-${me} Instagram downloader
-`.trim()
-  let result = HX.igdl(args[0]).then(res => conn.sendFile(m.chat, res.medias[0].url, '', txt, m))
-  conn.sendFile(m.chat, result, 'ig.jpg', txt, m)
+  if (!args[0]) throw '𝚄𝙼𝙷...𝚆𝙴𝚁𝙴-𝙸𝚂-𝚃𝙷𝙴-𝚄𝚁𝙻?'
+
+  let res = await scraper.instagramdl(args[0])
+  for (let i = 0; i < res.length; i++) await conn.sendFile(m.chat, res[i].url, '', '', m)
 }
-handler.help = ['ig']
+handler.help = ['ig'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^ig$/i
+handler.command = /^(ig)$/i
 
 handler.limit = true
-handler.limit = false
+handler.command = /^(ig(dl)|insta?)$/i
 
 module.exports = handler
