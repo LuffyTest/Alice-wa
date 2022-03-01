@@ -1,18 +1,19 @@
-let fetch = require('node-fetch')
-
-let handler = async (m, { conn, command, text, usedPrefix }) => {
-    if (!text) throw `uhm.. where is the url?\n\nUse:\n${usedPrefix + command} url\n\nExample:\n${usedPrefix + command} https://www.facebook.com/100003873289819/videos/625313175459585/`
-    let res = await fetch(API('amel', '/fb', { url: text }, 'apikey'))
-    if (!res.ok) throw eror
-    let json = await res.json()
+const { facebook } = require('../lib/facebook')
+let handler = async (m, { conn, args, usedPrefix, command }) => {
+  if (!args[0]) throw `uhm.. Where is the url?\n\nExample:\n${usedPrefix + command} https://www.facebook.com/alanwalkermusic/videos/277641643524720`
+  if (!args[0].match(/https:\/\/.*(facebook.com|fb.watch)/gi)) throw `Url error`
+  facebook(args[0]).then(async res => {
+    let fb = JSON.stringify(res)
+    let json = JSON.parse(fb)
+    // m.reply(require('util').format(json))
     if (!json.status) throw json
-    await m.reply(wait)
-    await conn.sendFile(m.chat, json.result.data[0].url, json.result.data[0].url + json.result.data[0].type, wm, m)
+    await m.reply(global.wait)
+    await conn.sendFile(m.chat, json.data[0].url, '', '© Alice 🥀', m)
+  }).catch(_ => _)
 }
-handler.help = ['facebook'].map(v => v + ' <url>')
-handler.tags = ['download']
-handler.command = /^(facebook|fb)$/i
+handler.help = ['fb'].map(v => v + ' <url>')
+handler.tags = ['downloader']
 
-handler.limit = 1
+handler.command = /^f((b|acebook)(dl|download)?(er)?)$/i
 
 module.exports = handler
