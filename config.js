@@ -33,7 +33,7 @@ global.APIKeys = { // APIKey nya disini
 global.packname = 'Alice 🎋'
 global.author = 'Nakiri'
 
-global.wm = '© Alice Nakiri'
+global.wm = '© Alice 🥀'
 global.wait = 'Please wait'
 global.eror = 'Server Error'
 global.benar = '✅'
