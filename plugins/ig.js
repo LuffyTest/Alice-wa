@@ -1,28 +1,14 @@
-let fetch = require('node-fetch')
-let handler = async (m, { itsu, args }) => {
-  if (!args[0]) throw 'Uhm...url nya mana?'
-  let res = await fetch(global.API('xteam', '/dl/ig', {
-    url: args[0]
-  }, 'APIKEY'))
-  if (res.status !== 200) {
-    res.text()
-    throw res.status
-  }
-  let json = await res.json()
-  if (!json.result) throw json
-  let { name, username, likes, caption, data } = json.result
-  let text = `
-Username: ${name} *(@${username})*
-${likes} Likes
-Caption:
-${caption}
-`.trim()
-  for (let { data: url, type } of data)
-    itsu.sendFile(m.chat, url, 'ig' + (type == 'video' ? '.mp4' : '.jpg'), text, m)
+let scraper = require('@bochilteam/scraper')
+
+let handler = async (m, { conn, args }) => {
+  if (!args[0]) throw 'uhm...where-is-the-url?'
+  
+  let res = await scraper.instagramdl(args[0])
+  for (let i = 0; i < res.length; i++) await conn.sendFile(m.chat, res[i].url, '', '', m)
 }
 handler.help = ['ig'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-
-handler.command = /^(ig(dl)?)$/i
+handler.limit = true
+handler.command = /^(ig(dl)|insta?)$/i
 
 module.exports = handler
