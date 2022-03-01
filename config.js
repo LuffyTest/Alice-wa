@@ -7,6 +7,7 @@ global.APIs = { // API Prefix
   // nama: 'https://website'
   joke: 'https://sv443.net/jokeapi/v2',
   bx: 'https://bx-hunter.herokuapp.com',
+  LeysCoder: 'https://leyscoders-api.herokuapp.com',
   rey: 'https://api.reysekha.my.id',
   dhnjing: 'https://dhnjing.xyz',
   hardianto: 'https://hardianto.xyz',
@@ -20,6 +21,7 @@ global.APIs = { // API Prefix
 global.APIKeys = { // APIKey nya disini
   // 'https://website': 'apikey'
   'https://melcanz.com': 'obefhhqP',
+  'https://leyscoders-api.herokuapp.com': 'dappakntlll'
   'https://api.reysekha.my.id': 'apirey',
   'https://bx-hunter.herokuapp.com': 'Ikyy69',
   'https://hardianto.xyz': 'hardianto',
