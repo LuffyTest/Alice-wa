@@ -30,15 +30,15 @@ global.APIKeys = { // APIKey nya disini
 }
 
 // Sticker WM
-global.packname = 'Alice 🎋'
-global.author = 'Nakiri'
+global.packname = '© Alice 🥀'
+global.author = 'Wabot'
 
 global.wm = '© Alice 🥀'
 global.wait = 'Please wait'
 global.eror = 'Server Error'
 global.benar = '✅'
 global.salah = '❌'
-global.dikit = 'A little morei'
+global.dikit = 'A little more'
 global.fla = 'https://i.imgur.com/p9Je8jv.jpg'
 
 global.multiplier = 69 // Semakin tinggi, semakin sulit naik level
