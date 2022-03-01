@@ -5,9 +5,10 @@ global.owner = ['94711392491', '94711392491'] // Letakan nomor kamu disini
 
 global.APIs = { // API Prefix
   // nama: 'https://website'
-  joke: 'https://sv443.net/jokeapi/v2',
+  LeysCoder: 'https://leyscoders-api.herokuapp.com',
   bx: 'https://bx-hunter.herokuapp.com',
   rey: 'https://api.reysekha.my.id',
+  zahir: 'https://zahirr-web.herokuapp.com',
   dhnjing: 'https://dhnjing.xyz',
   hardianto: 'https://hardianto.xyz',
   neoxr: 'https://api.neoxr.eu.org',
@@ -24,6 +25,7 @@ global.APIKeys = { // APIKey nya disini
   'https://bx-hunter.herokuapp.com': 'Ikyy69',
   'https://hardianto.xyz': 'hardianto',
   'https://api.neoxr.eu.org': 'UYFhJwJ9du',
+  'https://leyscoders-api.herokuapp.com': 'dappakntlll',
   'https://api.chipa.xyz': 'pais',
   'https://api.xteam.xyz': '86399e0f56a8347f',
   'https://api.zeks.me': 'rNOP3N9WFFY7tqbMeNp1lmWkdwLqqqq',
