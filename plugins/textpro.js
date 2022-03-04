@@ -12,7 +12,7 @@ let handler = async (m, { conn, args: [effect], text: txt }) => {
   await conn.sendFile(m.chat, url, 'file.jpg', `*TEXTPRO*\n*Effect:* ${effect}`, m, 0, { thumbnail: Buffer.alloc(0) })
 }
 handler.help = ['textpro'].map(v => v + ' <effect> <text>|[text2]')
-handler.tags = ['tools']
+handler.tags = ['nulis']
 handler.command = /^(textpro)$/i
 
 module.exports = handler
