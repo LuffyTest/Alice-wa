@@ -1,36 +1,30 @@
 let fetch = require("node-fetch")
 let axios = require("axios")
-let kntl = require("../src/kntl.json")
+
 let handler = async (m, { conn, text }) => {
   let api = (kntl.lolkey)
   let chat = global.DATABASE.data.chats[m.chat]
-   if (chat.nsfw) { 
-      if (!text) return m.reply("_Enter Keyword!!_")
-      await m.reply(global.wait)
      try {
-      let res = await axios.get(`https://api.lolhuman.xyz/api/xnxxsearch?apikey=711994c4ea9aa5a0ec39f7f2&query=${text}`)
+      let res = await axios.get(`https://api.lolhuman.xyz/api/xnxxsearch?apikey=56c3f2f2254d87b84051ab78&query=${text}`) 
       let json = res.data
       //let ress = json.result
-      let hsl = `*XNXX SEARCH*\n\n`
+      let hsl = `*_I FOUND THE FOLLOWING_*\n\n`
       for (let i = 0; i < json.result.length; i++) {
-           hsl += `*Title:* ${json.result[i].title}\n`
-           hsl += `*Views:* ${json.result[i].views}\n`
-           hsl += `*Duration:* ${json.result[i].duration}\n`
-           hsl += `*Uploader:* ${json.result[i].uploader}\n`
-           hsl += `*Link:*\n${json.result[i].link}\n\n`
+           hsl += `*Titulo:* ${json.result[i].title}\n`
+           hsl += `*Vistas:* ${json.result[i].views}\n`
+           hsl += `*Duración:* ${json.result[i].duration}\n`
+           hsl += `*Use el comando:*\n`
+           hsl += `#xnxx ${json.result[i].link}\n`
+           hsl += `*- Para descagar el vídeo*\n\n`
          }
-           hsl += '*© Alice 🥀*'
+           hsl += '*🐈 𝙂𝙖𝙩𝙖 𝘿𝙞𝙤𝙨 🐈*'
         conn.reply(m.chat, hsl, m)
     }catch(e){
-        m.reply("ERROR")
+        m.reply("*Something went wrong... please try again*\n\n*If the error persists, it could be because the daily server usage limit has expired, each day the limit is reset*")
         console.log(e)
      }
-    } else {
-       m.reply('```Need to Enable NSFW Mode```')
-    }
    }
-handler.command = /^(xnxxsearch|searchxnxx|xnxx)$/
-handler.tags = ["premium"];
+handler.command = /^(xnxxsearch|searchxnxx)$/
 handler.premium = true
-
+handler.tags = ["premium"];
 module.exports = handler
