@@ -211,21 +211,21 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
             {
               "rows": [
                 {
-                  "title": `━❰･ALL･❱━`,
+                  "title": `━❰･ALL MENU･❱━`,
                   "description": "",
                   "rowId": `${_p}? all`
                 }, {
-                  "title": "━❰･ANIME･❱━",
+                  "title": "━❰･ANIME MENU･❱━",
                   "description": "",
                   "rowId": `${_p}? anime`
 
                 }, {
-                  "title": "━❰･DOWNLOADER･❱━",
+                  "title": "━❰･DOWNLOADER MENU･❱━",
                   "description": "",
                   "rowId": `${_p}? downloader`
 
                 }, {
-                  "title": "━❰･STICKER･❱━",
+                  "title": "━❰･STICKER MENU･❱━",
                   "description": "",
                   "rowId": `${_p}? stiker`
                 }, {
@@ -237,19 +237,19 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "Under Construction 🛠",
                   "rowId": `${_p}? quotes`
                 }, {
-                  "title": "*━❰･ADMIN･❱━*",
+                  "title": "*━❰･ADMIN MENU･❱━*",
                   "description": "",
                   "rowId": `${_p}? admin`
                 }, {
-                  "title": "*━❰･GROUP･❱━*",
+                  "title": "*━❰･GROUP MENU･❱━*",
                   "description": "",
                   "rowId": `${_p}? grup`
                 }, {
-                  "title": "*━❰･PREMIUM･❱━*",
+                  "title": "*━❰･PREMIUM MENU･❱━*",
                   "description": "",
                   "rowId": `${_p}? premium`
                 }, {
-                  "title": "*━❰･INTERNET･❱━*",
+                  "title": "*━❰･INTERNET MENU･❱━*",
                   "description": "",
                   "rowId": `${_p}? internet`
                 }, {
@@ -265,11 +265,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? xp`
                 }, {
-                  "title": "━❰･TOOLS･❱━",
+                  "title": "━❰･TOOLS MENU･❱━",
                   "description": "",
                   "rowId": `${_p}? tools`
                 }, {
-                  "title": "━❰･FUN･❱━",
+                  "title": "━❰･FUN MENU･❱━",
                   "description": "",
                   "rowId": `${_p}? fun`
                 }, {
@@ -281,11 +281,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? vote`
                 }, {
-                  "title": "━❰･GAME･❱━",
+                  "title": "━❰･GAME MENU･❱━",
                   "description": "",
                   "rowId": `${_p}? game`
                 }, {
-                  "title": "━❰･AUDIO･❱━",
+                  "title": "━❰･AUDIO MENU･❱━",
                   "description": "",
                   "rowId": `${_p}? audio`
                 }, {
@@ -301,7 +301,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": `${_p}? tanpakategori`
                 }, {
-                  "title": "━❰･OWNER･❱━",
+                  "title": "━❰･OWNER MENU･❱━",
                   "description": "",
                   "rowId": `${_p}? owner`
                 }
