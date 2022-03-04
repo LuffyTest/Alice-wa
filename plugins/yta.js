@@ -7,9 +7,9 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   let { dl_link, thumb, title, filesize, filesizeF} = await yta(args[0], servers.includes(server) ? server : servers[0])
   let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
   conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
-*Title:* ${title}
-*Filesize:* ${filesizeF}
- ${isLimit ? 'Used ': ''}
+*🔮 Title:* ${title}
+*🔖 Filesize:* ${filesizeF}
+ ${isLimit ? 'This File Is Above Upload limit ': ''}
 `.trim(), m)
   if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp3', `
 *🔮 Title:* ${title}
