@@ -1,4 +1,4 @@
-	let handler = async (m, { conn }) => {
+let handler = async (m, { conn }) => {
   if (m.quoted) {
     await conn.groupRemove(m.chat, [m.quoted.sender])
     conn.reply(conn.user.jid, `@${m.sender.split`@`[0]} remove @${m.quoted.sender.split`@`[0]}`, m)
@@ -9,7 +9,7 @@
 }
 handler.help = ['remove'].map(v => v + ' @user')
 handler.tags = ['admin']
-handler.command = /^(remove|kick\-)$/i
+handler.command = /^(remove|\-)$/i
 
 handler.group = true
 handler.botAdmin = true
