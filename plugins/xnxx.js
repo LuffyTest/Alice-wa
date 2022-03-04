@@ -4,7 +4,7 @@ let axios = require("axios");
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 
-  if (!args[0]) throw `*[❗] Ingrese un enlace de la página https://xnxx.com*\n\n*Pude usar el comando #xnxxsearch + texto, para buscar videos sobre el texto puesto*`;
+  if (!args[0]) throw `*[❗] Enter a link of the page https://xnxx.com*\n\n*I could use the command .xnxxsearch + text, to search for videos on the text put*`;
 
 conn.reply(m.chat, `
 *[❗] Wait a moment..*
@@ -35,7 +35,7 @@ conn.reply(m.chat, `
 
       let data = JSON.parse(res.data.replace(/[()]/g, ""));
 
-      conn.sendFile(m.chat, data.Video_6_Url, "Error.mp4", "*Aqui tiene 😏🔥*", m);
+      conn.sendFile(m.chat, data.Video_6_Url, "Error.mp4", "*welcome to darkness*", m);
 
     });
 
@@ -43,7 +43,7 @@ conn.reply(m.chat, `
 
 handler.help = ["xnxx"].map((v) => v + " <Link>");
 
-handler.tags = ["nsfw"];
+handler.tags = ["premium"];
 
 handler.command = /^(xnxx)$/i;
 
