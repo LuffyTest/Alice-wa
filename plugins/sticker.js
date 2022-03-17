@@ -12,7 +12,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
       let img = await q.download()
       stiker = await sticker5(img, false, packname, author)
     } else if (/video/.test(mime)) {
-      if ((q.msg || q).seconds > 11) return m.reply('maks 10 detik!')
+      if ((q.msg || q).seconds > 11) return m.reply('max 10 seconds!')
       let img = await q.download()
       stiker = await sticker(img, false, packname, author)
     } else if (m.quoted.text) {
